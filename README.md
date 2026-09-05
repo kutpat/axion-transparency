@@ -6,4 +6,4 @@ While a call is open only the hash and a short envelope are public. The record c
 
 Each hash is also written to the Sigstore Rekor log and committed to a Bitcoin block through OpenTimestamps. The proofs are in `proofs/`. The key that signs the Rekor entries is in `keys/`. The format and how to check each anchor are in `schema.md`.
 
-Commits here are made by Axion Signal's publisher. A commit named after a record carries that record; `reveal AXN-...` publishes a closed call; one word means a batch.
+Commits here are made by Trading Core's publisher. A commit named after a record carries that record; `reveal AXN-...` publishes a closed call; one word means a batch.
