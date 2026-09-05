@@ -4,6 +4,6 @@ Every call an Axion analyst posts gets a permanent id, like `AXN-2026-08-20-0034
 
 While a call is open only the hash and a short envelope are public. The record carries a random salt, so the hash cannot be guessed back into the levels. When the call closes the full record is published in `records/`, and anyone can recompute every hash and the chain from one record to the next.
 
-Each hash is also written to the Sigstore Rekor log and committed to a Bitcoin block through OpenTimestamps. The proofs are in `proofs/`. The key that signs the Rekor entries is in `keys/`. The format and how to check each anchor are in `schema.md`.
+Each hash is also written to the Sigstore Rekor log and committed to a Bitcoin block through OpenTimestamps. The proofs are in `proofs/`. The key that signs the Rekor entries is in `keys/`. `spec.md` says how to check each anchor and `schema.md` lists every field. `python verify.py AXN-2026-08-20-00345` runs the checks for one call, and `reproduce/` recomputes every figure on axioncrypto.net/performance from the public ledger.
 
 Commits here are made by Trading Core's publisher. A commit named after a record carries that record; `reveal AXN-...` publishes a closed call; one word means a batch.
