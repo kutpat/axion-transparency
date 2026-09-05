@@ -1,0 +1,1 @@
+One JSON line per record, one file per UTC day, appended in the order Core built them. See schema.md.

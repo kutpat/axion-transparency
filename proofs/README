@@ -1,0 +1,1 @@
+Per record: the Rekor entry reference (<n>.rekor.json) once anchored, and the OpenTimestamps proof (<n>.ots) once it is in a Bitcoin block.
