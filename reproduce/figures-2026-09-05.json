@@ -1,0 +1,2633 @@
+{
+ "portfolioName": "official-v4",
+ "generatedAt": "2026-09-05T17:45:55.660134Z",
+ "calculationVersion": 2,
+ "openCalls": 25,
+ "followerAssumptions": {
+  "makerFeeBps": 2,
+  "takerFeeBps": 5.5,
+  "marketSlippageBps": 2,
+  "stopSlippageBps": 5,
+  "fundingApplied": false,
+  "executionDelayApplied": false,
+  "policyKey": "axion-bybit-linear-v4",
+  "policyVersion": 4,
+  "policyHash": "c25615a2bb2cf3e3590165216539c05770c26a18926f19f4c3b5c738ba99f031",
+  "legs": [
+   {
+    "leg": "ENTRY",
+    "condition": "ENTRY_RESTS",
+    "appliesWhen": "a limit, range or DCA entry, which rests in the book",
+    "liquidity": "MAKER",
+    "feeBps": 2,
+    "slippageBps": 0
+   },
+   {
+    "leg": "ENTRY",
+    "condition": "ENTRY_AT_MARKET",
+    "appliesWhen": "a market or cmp entry, taken at whatever was there",
+    "liquidity": "TAKER",
+    "feeBps": 5.5,
+    "slippageBps": 2
+   },
+   {
+    "leg": "ENTRY",
+    "condition": "ENTRY_ON_STOP",
+    "appliesWhen": "a stop entry, which crosses the book when it triggers",
+    "liquidity": "TAKER",
+    "feeBps": 5.5,
+    "slippageBps": 5
+   },
+   {
+    "leg": "EXIT",
+    "condition": "EXIT_TARGET_REACHED",
+    "appliesWhen": "the exit is a published target, which rests in the book",
+    "liquidity": "MAKER",
+    "feeBps": 2,
+    "slippageBps": 0
+   },
+   {
+    "leg": "EXIT",
+    "condition": "EXIT_ON_STOP",
+    "appliesWhen": "the exit is a stop, break-even included",
+    "liquidity": "TAKER",
+    "feeBps": 5.5,
+    "slippageBps": 5
+   },
+   {
+    "leg": "EXIT",
+    "condition": "EXIT_MANUAL_CLOSE",
+    "appliesWhen": "the analyst closed or trimmed the position by hand",
+    "liquidity": "TAKER",
+    "feeBps": 5.5,
+    "slippageBps": 2
+   }
+  ]
+ },
+ "ranges": [
+  {
+   "windowDays": 7,
+   "windowStart": "2026-08-29T17:45:55.660134Z",
+   "closedCalls": 21,
+   "wins": 16,
+   "losses": 5,
+   "breakevens": 0,
+   "winRatePct": 76.19,
+   "cumulativeR": 8.82,
+   "rQualifiedCalls": 21,
+   "averageR": 0.42,
+   "bestCallR": 2.16,
+   "maxDrawdownR": -0.28,
+   "dailyR": [
+    {
+     "day": "2026-08-29T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-08-30T00:00:00Z",
+     "r": -0.28,
+     "pct": 3.25,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-08-31T00:00:00Z",
+     "r": 0.32,
+     "pct": 2.43,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-09-01T00:00:00Z",
+     "r": 0.62,
+     "pct": -3.56,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-09-02T00:00:00Z",
+     "r": 1.1,
+     "pct": 8.07,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-09-03T00:00:00Z",
+     "r": 2.98,
+     "pct": 3.14,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-09-04T00:00:00Z",
+     "r": 4.08,
+     "pct": 29.97,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-09-05T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    }
+   ],
+   "analysts": [
+    {
+     "analyst": "Electron",
+     "slug": "discord-947954207493853214",
+     "closedCalls": 6,
+     "wins": 5,
+     "losses": 1,
+     "winRatePct": 83.33,
+     "cumulativeR": 3.28,
+     "cumulativeMovePct": 22.5
+    },
+    {
+     "analyst": "Triggerxbt",
+     "slug": "discord-704407068278259783",
+     "closedCalls": 3,
+     "wins": 2,
+     "losses": 1,
+     "winRatePct": 66.67,
+     "cumulativeR": 2.45,
+     "cumulativeMovePct": 5.99
+    },
+    {
+     "analyst": "Pipfessor",
+     "slug": "discord-965886211937947698",
+     "closedCalls": 2,
+     "wins": 2,
+     "losses": 0,
+     "winRatePct": 100,
+     "cumulativeR": 1.64,
+     "cumulativeMovePct": 8.01
+    },
+    {
+     "analyst": "Belovy",
+     "slug": "discord-755569441323876533",
+     "closedCalls": 1,
+     "wins": 1,
+     "losses": 0,
+     "winRatePct": 100,
+     "cumulativeR": 0.81,
+     "cumulativeMovePct": 5.8
+    },
+    {
+     "analyst": "D3LTA",
+     "slug": "discord-819513060522721280",
+     "closedCalls": 1,
+     "wins": 1,
+     "losses": 0,
+     "winRatePct": 100,
+     "cumulativeR": 0.6,
+     "cumulativeMovePct": 2.96
+    },
+    {
+     "analyst": "gaijin",
+     "slug": "discord-522797407788859393",
+     "closedCalls": 1,
+     "wins": 1,
+     "losses": 0,
+     "winRatePct": 100,
+     "cumulativeR": 0.27,
+     "cumulativeMovePct": 3.57
+    },
+    {
+     "analyst": "Thmassz",
+     "slug": "discord-1411901953427902605",
+     "closedCalls": 3,
+     "wins": 2,
+     "losses": 1,
+     "winRatePct": 66.67,
+     "cumulativeR": 0.15,
+     "cumulativeMovePct": -1.23
+    },
+    {
+     "analyst": "SaltWayer",
+     "slug": "discord-465549640788606976",
+     "closedCalls": 2,
+     "wins": 1,
+     "losses": 1,
+     "winRatePct": 50,
+     "cumulativeR": 0.04,
+     "cumulativeMovePct": -0.05
+    },
+    {
+     "analyst": "Bitcoin Wizard",
+     "slug": "discord-731235844077387816",
+     "closedCalls": 2,
+     "wins": 1,
+     "losses": 1,
+     "winRatePct": 50,
+     "cumulativeR": -0.42,
+     "cumulativeMovePct": -4.25
+    }
+   ],
+   "outcomeBuckets": [
+    {
+     "label": "\u2264\u22122R",
+     "calls": 0
+    },
+    {
+     "label": "\u22121R",
+     "calls": 4
+    },
+    {
+     "label": "0R",
+     "calls": 5
+    },
+    {
+     "label": "+1R",
+     "calls": 11
+    },
+    {
+     "label": "+2R",
+     "calls": 1
+    },
+    {
+     "label": "+3R",
+     "calls": 0
+    },
+    {
+     "label": "\u2265+4R",
+     "calls": 0
+    }
+   ],
+   "instruments": [
+    {
+     "symbol": "BTCUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 2.94,
+     "cumulativeMovePct": 7.69
+    },
+    {
+     "symbol": "DOTUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.44,
+     "cumulativeMovePct": 8.4
+    },
+    {
+     "symbol": "NEIROUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.37,
+     "cumulativeMovePct": 10.96
+    },
+    {
+     "symbol": "METAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.31,
+     "cumulativeMovePct": 4.53
+    },
+    {
+     "symbol": "PEOPLEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.04,
+     "cumulativeMovePct": 3.61
+    },
+    {
+     "symbol": "AAVEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.83,
+     "cumulativeMovePct": 4.5
+    },
+    {
+     "symbol": "XLMUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.81,
+     "cumulativeMovePct": 5.8
+    },
+    {
+     "symbol": "BRETTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.78,
+     "cumulativeMovePct": 5.76
+    },
+    {
+     "symbol": "ZKPUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.65,
+     "cumulativeMovePct": 4.27
+    },
+    {
+     "symbol": "EGLDUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.61,
+     "cumulativeMovePct": 5.65
+    },
+    {
+     "symbol": "FARTCOINUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.6,
+     "cumulativeMovePct": 2.96
+    },
+    {
+     "symbol": "KGENUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.47,
+     "cumulativeMovePct": 3.18
+    },
+    {
+     "symbol": "AVAXUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.32,
+     "cumulativeMovePct": 2.43
+    },
+    {
+     "symbol": "TQQQUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.17,
+     "cumulativeMovePct": 0.49
+    },
+    {
+     "symbol": "ETHUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.49,
+     "cumulativeMovePct": -1.7
+    },
+    {
+     "symbol": "LABUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.66
+    },
+    {
+     "symbol": "BOTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.51
+    },
+    {
+     "symbol": "XRPUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -8.16
+    },
+    {
+     "symbol": "GRIFFAINUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1.03,
+     "cumulativeMovePct": -9.9
+    }
+   ],
+   "cumulativeMovePct": 43.3,
+   "averageMovePct": 2.06,
+   "bestCallPct": 10.96,
+   "maxDrawdownPct": -3.56,
+   "outcomeBucketsPct": [
+    {
+     "label": "\u2264\u221210%",
+     "calls": 2
+    },
+    {
+     "label": "\u22125%",
+     "calls": 2
+    },
+    {
+     "label": "0%",
+     "calls": 4
+    },
+    {
+     "label": "+5%",
+     "calls": 12
+    },
+    {
+     "label": "+10%",
+     "calls": 1
+    },
+    {
+     "label": "+15%",
+     "calls": 0
+    },
+    {
+     "label": "\u2265+20%",
+     "calls": 0
+    }
+   ],
+   "cumulativeFollowerR": 8.31,
+   "averageFollowerR": 0.4,
+   "cumulativeFollowerMovePct": 40.78,
+   "averageFollowerMovePct": 1.94
+  },
+  {
+   "windowDays": 30,
+   "windowStart": "2026-08-06T17:45:55.660134Z",
+   "closedCalls": 108,
+   "wins": 75,
+   "losses": 28,
+   "breakevens": 5,
+   "winRatePct": 72.82,
+   "cumulativeR": 74.54,
+   "rQualifiedCalls": 108,
+   "averageR": 0.69,
+   "bestCallR": 11.89,
+   "maxDrawdownR": -1.77,
+   "dailyR": [
+    {
+     "day": "2026-08-06T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-08-07T00:00:00Z",
+     "r": 0.55,
+     "pct": 3.93,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-08T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-08-09T00:00:00Z",
+     "r": -1.77,
+     "pct": -4.96,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-10T00:00:00Z",
+     "r": 2.54,
+     "pct": 30.33,
+     "closedCalls": 6
+    },
+    {
+     "day": "2026-08-11T00:00:00Z",
+     "r": 15.57,
+     "pct": 35.1,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-08-12T00:00:00Z",
+     "r": -0.23,
+     "pct": 2.58,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-13T00:00:00Z",
+     "r": 1.88,
+     "pct": 16.82,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-14T00:00:00Z",
+     "r": 1.61,
+     "pct": 8.15,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-15T00:00:00Z",
+     "r": 0.17,
+     "pct": 10.9,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-16T00:00:00Z",
+     "r": 0.76,
+     "pct": 3.1,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-17T00:00:00Z",
+     "r": -0.41,
+     "pct": -0.77,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-18T00:00:00Z",
+     "r": 0.7,
+     "pct": 3.86,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-19T00:00:00Z",
+     "r": 7.56,
+     "pct": 44.15,
+     "closedCalls": 15
+    },
+    {
+     "day": "2026-08-20T00:00:00Z",
+     "r": 12.64,
+     "pct": 67.69,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-08-21T00:00:00Z",
+     "r": 1.69,
+     "pct": -7.89,
+     "closedCalls": 7
+    },
+    {
+     "day": "2026-08-22T00:00:00Z",
+     "r": 12.57,
+     "pct": 107.14,
+     "closedCalls": 10
+    },
+    {
+     "day": "2026-08-23T00:00:00Z",
+     "r": 3.5,
+     "pct": 40.26,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-24T00:00:00Z",
+     "r": 2.39,
+     "pct": 15.98,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-25T00:00:00Z",
+     "r": -0.32,
+     "pct": -0.29,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-26T00:00:00Z",
+     "r": 3.48,
+     "pct": 12.97,
+     "closedCalls": 6
+    },
+    {
+     "day": "2026-08-27T00:00:00Z",
+     "r": -1.66,
+     "pct": -19.09,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-28T00:00:00Z",
+     "r": 2.52,
+     "pct": 8.86,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-08-29T00:00:00Z",
+     "r": -0.02,
+     "pct": -0.24,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-30T00:00:00Z",
+     "r": -0.28,
+     "pct": 3.25,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-08-31T00:00:00Z",
+     "r": 0.32,
+     "pct": 2.43,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-09-01T00:00:00Z",
+     "r": 0.62,
+     "pct": -3.56,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-09-02T00:00:00Z",
+     "r": 1.1,
+     "pct": 8.07,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-09-03T00:00:00Z",
+     "r": 2.98,
+     "pct": 3.14,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-09-04T00:00:00Z",
+     "r": 4.08,
+     "pct": 29.97,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-09-05T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    }
+   ],
+   "analysts": [
+    {
+     "analyst": "D3LTA",
+     "slug": "discord-819513060522721280",
+     "closedCalls": 9,
+     "wins": 8,
+     "losses": 1,
+     "winRatePct": 88.89,
+     "cumulativeR": 22.58,
+     "cumulativeMovePct": 115.67
+    },
+    {
+     "analyst": "gaijin",
+     "slug": "discord-522797407788859393",
+     "closedCalls": 21,
+     "wins": 16,
+     "losses": 5,
+     "winRatePct": 76.19,
+     "cumulativeR": 17.63,
+     "cumulativeMovePct": 109.59
+    },
+    {
+     "analyst": "Thmassz",
+     "slug": "discord-1411901953427902605",
+     "closedCalls": 11,
+     "wins": 7,
+     "losses": 4,
+     "winRatePct": 63.64,
+     "cumulativeR": 7.94,
+     "cumulativeMovePct": 44.79
+    },
+    {
+     "analyst": "Belovy",
+     "slug": "discord-755569441323876533",
+     "closedCalls": 6,
+     "wins": 5,
+     "losses": 1,
+     "winRatePct": 83.33,
+     "cumulativeR": 6.28,
+     "cumulativeMovePct": 21.93
+    },
+    {
+     "analyst": "Triggerxbt",
+     "slug": "discord-704407068278259783",
+     "closedCalls": 6,
+     "wins": 5,
+     "losses": 1,
+     "winRatePct": 83.33,
+     "cumulativeR": 5.83,
+     "cumulativeMovePct": 10.61
+    },
+    {
+     "analyst": "Pipfessor",
+     "slug": "discord-965886211937947698",
+     "closedCalls": 10,
+     "wins": 8,
+     "losses": 1,
+     "winRatePct": 88.89,
+     "cumulativeR": 5.39,
+     "cumulativeMovePct": 28.88
+    },
+    {
+     "analyst": "Bitcoin Wizard",
+     "slug": "discord-731235844077387816",
+     "closedCalls": 12,
+     "wins": 8,
+     "losses": 4,
+     "winRatePct": 66.67,
+     "cumulativeR": 4.94,
+     "cumulativeMovePct": 48.01
+    },
+    {
+     "analyst": "Electron",
+     "slug": "discord-947954207493853214",
+     "closedCalls": 21,
+     "wins": 12,
+     "losses": 6,
+     "winRatePct": 66.67,
+     "cumulativeR": 4.26,
+     "cumulativeMovePct": 33.28
+    },
+    {
+     "analyst": "SaltWayer",
+     "slug": "discord-465549640788606976",
+     "closedCalls": 10,
+     "wins": 5,
+     "losses": 4,
+     "winRatePct": 55.56,
+     "cumulativeR": -0.14,
+     "cumulativeMovePct": 2.18
+    },
+    {
+     "analyst": "Natrix | wont DM first",
+     "slug": "discord-308183920015573004",
+     "closedCalls": 2,
+     "wins": 1,
+     "losses": 1,
+     "winRatePct": 50,
+     "cumulativeR": -0.17,
+     "cumulativeMovePct": 6.94
+    }
+   ],
+   "outcomeBuckets": [
+    {
+     "label": "\u2264\u22122R",
+     "calls": 0
+    },
+    {
+     "label": "\u22121R",
+     "calls": 23
+    },
+    {
+     "label": "0R",
+     "calls": 30
+    },
+    {
+     "label": "+1R",
+     "calls": 38
+    },
+    {
+     "label": "+2R",
+     "calls": 8
+    },
+    {
+     "label": "+3R",
+     "calls": 3
+    },
+    {
+     "label": "\u2265+4R",
+     "calls": 6
+    }
+   ],
+   "instruments": [
+    {
+     "symbol": "ADAUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 12.77,
+     "cumulativeMovePct": 27.28
+    },
+    {
+     "symbol": "HYPEUSDT",
+     "closedCalls": 4,
+     "cumulativeR": 6.77,
+     "cumulativeMovePct": 50.98
+    },
+    {
+     "symbol": "BROCCOLI714USDT",
+     "closedCalls": 1,
+     "cumulativeR": 6.7,
+     "cumulativeMovePct": 30.65
+    },
+    {
+     "symbol": "SOLUSDT",
+     "closedCalls": 4,
+     "cumulativeR": 5.23,
+     "cumulativeMovePct": 23.31
+    },
+    {
+     "symbol": "DOTUSDT",
+     "closedCalls": 6,
+     "cumulativeR": 4.95,
+     "cumulativeMovePct": 33.56
+    },
+    {
+     "symbol": "BTCUSDT",
+     "closedCalls": 9,
+     "cumulativeR": 4.91,
+     "cumulativeMovePct": -2.44
+    },
+    {
+     "symbol": "VELODROMEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 3.32,
+     "cumulativeMovePct": 33.51
+    },
+    {
+     "symbol": "RVNUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 2.97,
+     "cumulativeMovePct": 21.18
+    },
+    {
+     "symbol": "TAOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 2.57,
+     "cumulativeMovePct": 22.19
+    },
+    {
+     "symbol": "XRPUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 2.52,
+     "cumulativeMovePct": 15.86
+    },
+    {
+     "symbol": "ONDOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 2.15,
+     "cumulativeMovePct": 9.06
+    },
+    {
+     "symbol": "PEOPLEUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.82,
+     "cumulativeMovePct": 7.06
+    },
+    {
+     "symbol": "ZKUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.66,
+     "cumulativeMovePct": 12.9
+    },
+    {
+     "symbol": "TIAUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 1.59,
+     "cumulativeMovePct": 14.99
+    },
+    {
+     "symbol": "FARTCOINUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.44,
+     "cumulativeMovePct": 8.65
+    },
+    {
+     "symbol": "BOTUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.39,
+     "cumulativeMovePct": 12.47
+    },
+    {
+     "symbol": "ARBUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.38,
+     "cumulativeMovePct": 11.01
+    },
+    {
+     "symbol": "NEIROUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.37,
+     "cumulativeMovePct": 10.96
+    },
+    {
+     "symbol": "ETCUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.31,
+     "cumulativeMovePct": 15.92
+    },
+    {
+     "symbol": "METAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.31,
+     "cumulativeMovePct": 4.53
+    },
+    {
+     "symbol": "XLMUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.15,
+     "cumulativeMovePct": 7.65
+    },
+    {
+     "symbol": "COTIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.1,
+     "cumulativeMovePct": 13.37
+    },
+    {
+     "symbol": "MANTRAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.03,
+     "cumulativeMovePct": 4.65
+    },
+    {
+     "symbol": "NEARUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.03,
+     "cumulativeMovePct": 10.93
+    },
+    {
+     "symbol": "HOLOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.93,
+     "cumulativeMovePct": 4.85
+    },
+    {
+     "symbol": "FOGOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.93,
+     "cumulativeMovePct": 4.32
+    },
+    {
+     "symbol": "AVAXUSDT",
+     "closedCalls": 4,
+     "cumulativeR": 0.9,
+     "cumulativeMovePct": 14.13
+    },
+    {
+     "symbol": "CASHCATUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.83,
+     "cumulativeMovePct": 10.64
+    },
+    {
+     "symbol": "AAVEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.83,
+     "cumulativeMovePct": 4.5
+    },
+    {
+     "symbol": "KGENUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 0.81,
+     "cumulativeMovePct": 6.21
+    },
+    {
+     "symbol": "BRETTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.78,
+     "cumulativeMovePct": 5.76
+    },
+    {
+     "symbol": "BANANAS31USDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.77,
+     "cumulativeMovePct": 7.39
+    },
+    {
+     "symbol": "WIFUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.76,
+     "cumulativeMovePct": 3.1
+    },
+    {
+     "symbol": "ICPUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.68,
+     "cumulativeMovePct": 4.74
+    },
+    {
+     "symbol": "KAVAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.68,
+     "cumulativeMovePct": 2.18
+    },
+    {
+     "symbol": "HUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.68,
+     "cumulativeMovePct": 3.41
+    },
+    {
+     "symbol": "ZKPUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.65,
+     "cumulativeMovePct": 4.27
+    },
+    {
+     "symbol": "EGLDUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.61,
+     "cumulativeMovePct": 5.65
+    },
+    {
+     "symbol": "CRVUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.55,
+     "cumulativeMovePct": 3.93
+    },
+    {
+     "symbol": "ONTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.5,
+     "cumulativeMovePct": 2.72
+    },
+    {
+     "symbol": "ATOMUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.47,
+     "cumulativeMovePct": 3.04
+    },
+    {
+     "symbol": "GRIFFAINUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 0.27,
+     "cumulativeMovePct": 2.32
+    },
+    {
+     "symbol": "PENDLEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.26,
+     "cumulativeMovePct": 3.31
+    },
+    {
+     "symbol": "OPNUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.25,
+     "cumulativeMovePct": 1.42
+    },
+    {
+     "symbol": "TQQQUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.17,
+     "cumulativeMovePct": 0.49
+    },
+    {
+     "symbol": "ZBTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.12,
+     "cumulativeMovePct": 1.17
+    },
+    {
+     "symbol": "BICOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.05,
+     "cumulativeMovePct": 0.45
+    },
+    {
+     "symbol": "ETHFIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "ARPAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "BASUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "ONDSUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "LTCUSDT",
+     "closedCalls": 3,
+     "cumulativeR": -0.26,
+     "cumulativeMovePct": -2.56
+    },
+    {
+     "symbol": "ETHUSDT",
+     "closedCalls": 5,
+     "cumulativeR": -0.29,
+     "cumulativeMovePct": -37.09
+    },
+    {
+     "symbol": "DEXEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.41,
+     "cumulativeMovePct": -0.77
+    },
+    {
+     "symbol": "TUTUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -0.57,
+     "cumulativeMovePct": -1.53
+    },
+    {
+     "symbol": "BEATUSDT",
+     "closedCalls": 3,
+     "cumulativeR": -0.83,
+     "cumulativeMovePct": 4.78
+    },
+    {
+     "symbol": "LITUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -5.54
+    },
+    {
+     "symbol": "PROMPTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.06
+    },
+    {
+     "symbol": "UNIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -4.7
+    },
+    {
+     "symbol": "BNBUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -0.71
+    },
+    {
+     "symbol": "LDOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -7.74
+    },
+    {
+     "symbol": "POWERUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.25
+    },
+    {
+     "symbol": "SUIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.7
+    },
+    {
+     "symbol": "LABUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.66
+    },
+    {
+     "symbol": "POLUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -1.02,
+     "cumulativeMovePct": -8.82
+    }
+   ],
+   "cumulativeMovePct": 421.88,
+   "averageMovePct": 3.91,
+   "bestCallPct": 33.51,
+   "maxDrawdownPct": -19.09,
+   "outcomeBucketsPct": [
+    {
+     "label": "\u2264\u221210%",
+     "calls": 8
+    },
+    {
+     "label": "\u22125%",
+     "calls": 11
+    },
+    {
+     "label": "0%",
+     "calls": 32
+    },
+    {
+     "label": "+5%",
+     "calls": 31
+    },
+    {
+     "label": "+10%",
+     "calls": 10
+    },
+    {
+     "label": "+15%",
+     "calls": 9
+    },
+    {
+     "label": "\u2265+20%",
+     "calls": 7
+    }
+   ],
+   "cumulativeFollowerR": 70.37,
+   "averageFollowerR": 0.65,
+   "cumulativeFollowerMovePct": 408.93,
+   "averageFollowerMovePct": 3.79
+  },
+  {
+   "windowDays": 90,
+   "windowStart": "2026-06-07T17:45:55.660134Z",
+   "closedCalls": 229,
+   "wins": 142,
+   "losses": 76,
+   "breakevens": 11,
+   "winRatePct": 65.14,
+   "cumulativeR": 99.61,
+   "rQualifiedCalls": 228,
+   "averageR": 0.44,
+   "bestCallR": 11.89,
+   "maxDrawdownR": -5.26,
+   "dailyR": [
+    {
+     "day": "2026-06-07T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-06-08T00:00:00Z",
+     "r": 0.03,
+     "pct": 0.26,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-06-09T00:00:00Z",
+     "r": 0.51,
+     "pct": 1.6,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-06-10T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-06-11T00:00:00Z",
+     "r": -1.14,
+     "pct": -11.09,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-06-12T00:00:00Z",
+     "r": -2,
+     "pct": -7.86,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-06-13T00:00:00Z",
+     "r": 0.54,
+     "pct": 3.25,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-06-14T00:00:00Z",
+     "r": 0.41,
+     "pct": 2.57,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-06-15T00:00:00Z",
+     "r": -1.45,
+     "pct": -14.91,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-06-16T00:00:00Z",
+     "r": 0.48,
+     "pct": 5.57,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-06-17T00:00:00Z",
+     "r": 1.32,
+     "pct": 12.13,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-06-18T00:00:00Z",
+     "r": 1.99,
+     "pct": 38.02,
+     "closedCalls": 6
+    },
+    {
+     "day": "2026-06-19T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-06-20T00:00:00Z",
+     "r": 0.54,
+     "pct": 2.92,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-06-21T00:00:00Z",
+     "r": 0.11,
+     "pct": 1.6,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-06-22T00:00:00Z",
+     "r": -0.22,
+     "pct": 1.36,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-06-23T00:00:00Z",
+     "r": -0.56,
+     "pct": -4.39,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-06-24T00:00:00Z",
+     "r": -0.83,
+     "pct": -3.07,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-06-25T00:00:00Z",
+     "r": 1.19,
+     "pct": 16.77,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-06-26T00:00:00Z",
+     "r": 0.14,
+     "pct": 2.19,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-06-27T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-06-28T00:00:00Z",
+     "r": 0.1,
+     "pct": -1.1,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-06-29T00:00:00Z",
+     "r": 0.78,
+     "pct": 3.81,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-06-30T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-07-01T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-07-02T00:00:00Z",
+     "r": -0.47,
+     "pct": -2.01,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-03T00:00:00Z",
+     "r": 2.83,
+     "pct": 25.18,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-07-04T00:00:00Z",
+     "r": 0.22,
+     "pct": 3.56,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-05T00:00:00Z",
+     "r": 0.01,
+     "pct": 1.28,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-06T00:00:00Z",
+     "r": -0.31,
+     "pct": -1.93,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-07T00:00:00Z",
+     "r": -0.11,
+     "pct": -1.26,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-08T00:00:00Z",
+     "r": 1.46,
+     "pct": 13.05,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-07-09T00:00:00Z",
+     "r": 0.03,
+     "pct": 1.29,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-10T00:00:00Z",
+     "r": -2.31,
+     "pct": -16.14,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-11T00:00:00Z",
+     "r": 0.01,
+     "pct": 0.06,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-12T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-07-13T00:00:00Z",
+     "r": 0.87,
+     "pct": 10.17,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-14T00:00:00Z",
+     "r": -1.86,
+     "pct": -10.8,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-15T00:00:00Z",
+     "r": 0.61,
+     "pct": 3.99,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-16T00:00:00Z",
+     "r": -2.09,
+     "pct": -12.95,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-17T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-07-18T00:00:00Z",
+     "r": -0.21,
+     "pct": -0.81,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-19T00:00:00Z",
+     "r": 0.1,
+     "pct": 1.67,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-20T00:00:00Z",
+     "r": 0.74,
+     "pct": 0.46,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-07-21T00:00:00Z",
+     "r": -1.12,
+     "pct": 13.93,
+     "closedCalls": 6
+    },
+    {
+     "day": "2026-07-22T00:00:00Z",
+     "r": 4.46,
+     "pct": 24.06,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-23T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-07-24T00:00:00Z",
+     "r": 11.03,
+     "pct": 63.19,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-07-25T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-07-26T00:00:00Z",
+     "r": 0.21,
+     "pct": 9.68,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-07-27T00:00:00Z",
+     "r": -2.03,
+     "pct": -11.73,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-28T00:00:00Z",
+     "r": 1,
+     "pct": 3.86,
+     "closedCalls": 6
+    },
+    {
+     "day": "2026-07-29T00:00:00Z",
+     "r": -0.62,
+     "pct": -9.1,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-30T00:00:00Z",
+     "r": 5.98,
+     "pct": 17.91,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-07-31T00:00:00Z",
+     "r": -0.1,
+     "pct": -0.8,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-01T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-08-02T00:00:00Z",
+     "r": 2.17,
+     "pct": 11.15,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-03T00:00:00Z",
+     "r": 1.69,
+     "pct": 18.02,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-04T00:00:00Z",
+     "r": -2,
+     "pct": -0.54,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-05T00:00:00Z",
+     "r": 3.12,
+     "pct": 16.39,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-08-06T00:00:00Z",
+     "r": -0.18,
+     "pct": -2.67,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-08-07T00:00:00Z",
+     "r": 0.55,
+     "pct": 3.93,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-08T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    },
+    {
+     "day": "2026-08-09T00:00:00Z",
+     "r": -1.77,
+     "pct": -4.96,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-10T00:00:00Z",
+     "r": 2.54,
+     "pct": 30.33,
+     "closedCalls": 6
+    },
+    {
+     "day": "2026-08-11T00:00:00Z",
+     "r": 15.57,
+     "pct": 35.1,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-08-12T00:00:00Z",
+     "r": -0.23,
+     "pct": 2.58,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-13T00:00:00Z",
+     "r": 1.88,
+     "pct": 16.82,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-14T00:00:00Z",
+     "r": 1.61,
+     "pct": 8.15,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-15T00:00:00Z",
+     "r": 0.17,
+     "pct": 10.9,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-16T00:00:00Z",
+     "r": 0.76,
+     "pct": 3.1,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-17T00:00:00Z",
+     "r": -0.41,
+     "pct": -0.77,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-18T00:00:00Z",
+     "r": 0.7,
+     "pct": 3.86,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-19T00:00:00Z",
+     "r": 7.56,
+     "pct": 44.15,
+     "closedCalls": 15
+    },
+    {
+     "day": "2026-08-20T00:00:00Z",
+     "r": 12.64,
+     "pct": 67.69,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-08-21T00:00:00Z",
+     "r": 1.69,
+     "pct": -7.89,
+     "closedCalls": 7
+    },
+    {
+     "day": "2026-08-22T00:00:00Z",
+     "r": 12.57,
+     "pct": 107.14,
+     "closedCalls": 10
+    },
+    {
+     "day": "2026-08-23T00:00:00Z",
+     "r": 3.5,
+     "pct": 40.26,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-24T00:00:00Z",
+     "r": 2.39,
+     "pct": 15.98,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-25T00:00:00Z",
+     "r": -0.32,
+     "pct": -0.29,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-08-26T00:00:00Z",
+     "r": 3.48,
+     "pct": 12.97,
+     "closedCalls": 6
+    },
+    {
+     "day": "2026-08-27T00:00:00Z",
+     "r": -1.66,
+     "pct": -19.09,
+     "closedCalls": 3
+    },
+    {
+     "day": "2026-08-28T00:00:00Z",
+     "r": 2.52,
+     "pct": 8.86,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-08-29T00:00:00Z",
+     "r": -0.02,
+     "pct": -0.24,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-08-30T00:00:00Z",
+     "r": -0.28,
+     "pct": 3.25,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-08-31T00:00:00Z",
+     "r": 0.32,
+     "pct": 2.43,
+     "closedCalls": 1
+    },
+    {
+     "day": "2026-09-01T00:00:00Z",
+     "r": 0.62,
+     "pct": -3.56,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-09-02T00:00:00Z",
+     "r": 1.1,
+     "pct": 8.07,
+     "closedCalls": 2
+    },
+    {
+     "day": "2026-09-03T00:00:00Z",
+     "r": 2.98,
+     "pct": 3.14,
+     "closedCalls": 4
+    },
+    {
+     "day": "2026-09-04T00:00:00Z",
+     "r": 4.08,
+     "pct": 29.97,
+     "closedCalls": 5
+    },
+    {
+     "day": "2026-09-05T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closedCalls": 0
+    }
+   ],
+   "analysts": [
+    {
+     "analyst": "D3LTA",
+     "slug": "discord-819513060522721280",
+     "closedCalls": 19,
+     "wins": 12,
+     "losses": 7,
+     "winRatePct": 63.16,
+     "cumulativeR": 21.45,
+     "cumulativeMovePct": 119.5
+    },
+    {
+     "analyst": "gaijin",
+     "slug": "discord-522797407788859393",
+     "closedCalls": 26,
+     "wins": 18,
+     "losses": 8,
+     "winRatePct": 69.23,
+     "cumulativeR": 16.37,
+     "cumulativeMovePct": 110.72
+    },
+    {
+     "analyst": "Pipfessor",
+     "slug": "discord-965886211937947698",
+     "closedCalls": 28,
+     "wins": 20,
+     "losses": 7,
+     "winRatePct": 74.07,
+     "cumulativeR": 12.3,
+     "cumulativeMovePct": 106.88
+    },
+    {
+     "analyst": "Belovy",
+     "slug": "discord-755569441323876533",
+     "closedCalls": 24,
+     "wins": 19,
+     "losses": 3,
+     "winRatePct": 86.36,
+     "cumulativeR": 11.36,
+     "cumulativeMovePct": 57.74
+    },
+    {
+     "analyst": "SaltWayer",
+     "slug": "discord-465549640788606976",
+     "closedCalls": 30,
+     "wins": 18,
+     "losses": 11,
+     "winRatePct": 62.07,
+     "cumulativeR": 9.94,
+     "cumulativeMovePct": 43.93
+    },
+    {
+     "analyst": "Bitcoin Wizard",
+     "slug": "discord-731235844077387816",
+     "closedCalls": 30,
+     "wins": 18,
+     "losses": 11,
+     "winRatePct": 62.07,
+     "cumulativeR": 8.91,
+     "cumulativeMovePct": 81.84
+    },
+    {
+     "analyst": "Thmassz",
+     "slug": "discord-1411901953427902605",
+     "closedCalls": 17,
+     "wins": 9,
+     "losses": 8,
+     "winRatePct": 52.94,
+     "cumulativeR": 7.75,
+     "cumulativeMovePct": 41.44
+    },
+    {
+     "analyst": "Electron",
+     "slug": "discord-947954207493853214",
+     "closedCalls": 47,
+     "wins": 22,
+     "losses": 19,
+     "winRatePct": 53.66,
+     "cumulativeR": 5.87,
+     "cumulativeMovePct": 60.07
+    },
+    {
+     "analyst": "Triggerxbt",
+     "slug": "discord-704407068278259783",
+     "closedCalls": 6,
+     "wins": 5,
+     "losses": 1,
+     "winRatePct": 83.33,
+     "cumulativeR": 5.83,
+     "cumulativeMovePct": 10.61
+    },
+    {
+     "analyst": "Natrix | wont DM first",
+     "slug": "discord-308183920015573004",
+     "closedCalls": 2,
+     "wins": 1,
+     "losses": 1,
+     "winRatePct": 50,
+     "cumulativeR": -0.17,
+     "cumulativeMovePct": 6.94
+    }
+   ],
+   "outcomeBuckets": [
+    {
+     "label": "\u2264\u22122R",
+     "calls": 0
+    },
+    {
+     "label": "\u22121R",
+     "calls": 56
+    },
+    {
+     "label": "0R",
+     "calls": 78
+    },
+    {
+     "label": "+1R",
+     "calls": 66
+    },
+    {
+     "label": "+2R",
+     "calls": 14
+    },
+    {
+     "label": "+3R",
+     "calls": 5
+    },
+    {
+     "label": "\u2265+4R",
+     "calls": 9
+    }
+   ],
+   "instruments": [
+    {
+     "symbol": "ADAUSDT",
+     "closedCalls": 4,
+     "cumulativeR": 14.87,
+     "cumulativeMovePct": 38.19
+    },
+    {
+     "symbol": "BROCCOLI714USDT",
+     "closedCalls": 1,
+     "cumulativeR": 6.7,
+     "cumulativeMovePct": 30.65
+    },
+    {
+     "symbol": "BTCUSDT",
+     "closedCalls": 18,
+     "cumulativeR": 5.52,
+     "cumulativeMovePct": 2.54
+    },
+    {
+     "symbol": "SOLUSDT",
+     "closedCalls": 9,
+     "cumulativeR": 5.45,
+     "cumulativeMovePct": 22.76
+    },
+    {
+     "symbol": "DOTUSDT",
+     "closedCalls": 6,
+     "cumulativeR": 4.95,
+     "cumulativeMovePct": 33.56
+    },
+    {
+     "symbol": "RAYDIUMUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 4.53,
+     "cumulativeMovePct": 19.57
+    },
+    {
+     "symbol": "XRPUSDT",
+     "closedCalls": 5,
+     "cumulativeR": 4.51,
+     "cumulativeMovePct": 21.4
+    },
+    {
+     "symbol": "LDOUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 4.47,
+     "cumulativeMovePct": 30.18
+    },
+    {
+     "symbol": "HYPEUSDT",
+     "closedCalls": 10,
+     "cumulativeR": 4.02,
+     "cumulativeMovePct": 21.48
+    },
+    {
+     "symbol": "RVNUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 2.97,
+     "cumulativeMovePct": 21.18
+    },
+    {
+     "symbol": "ZECUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 2.94,
+     "cumulativeMovePct": 32.41
+    },
+    {
+     "symbol": "ONDOUSDT",
+     "closedCalls": 6,
+     "cumulativeR": 2.76,
+     "cumulativeMovePct": 28.45
+    },
+    {
+     "symbol": "CLOUSDT",
+     "closedCalls": 4,
+     "cumulativeR": 2.72,
+     "cumulativeMovePct": 35.03
+    },
+    {
+     "symbol": "TAOUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 2.67,
+     "cumulativeMovePct": 23.36
+    },
+    {
+     "symbol": "SAFEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 2.61,
+     "cumulativeMovePct": 13.44
+    },
+    {
+     "symbol": "PORTALUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 2.17,
+     "cumulativeMovePct": 11.15
+    },
+    {
+     "symbol": "PEOPLEUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.82,
+     "cumulativeMovePct": 7.06
+    },
+    {
+     "symbol": "HOLOUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.71,
+     "cumulativeMovePct": 8.66
+    },
+    {
+     "symbol": "FIGHTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.68,
+     "cumulativeMovePct": 9.44
+    },
+    {
+     "symbol": "HBARUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.68,
+     "cumulativeMovePct": 5.35
+    },
+    {
+     "symbol": "ZKUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.66,
+     "cumulativeMovePct": 12.9
+    },
+    {
+     "symbol": "TIAUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 1.59,
+     "cumulativeMovePct": 14.99
+    },
+    {
+     "symbol": "PYTHUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.55,
+     "cumulativeMovePct": 12.37
+    },
+    {
+     "symbol": "YGGUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.41,
+     "cumulativeMovePct": 5.14
+    },
+    {
+     "symbol": "BOTUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.39,
+     "cumulativeMovePct": 12.47
+    },
+    {
+     "symbol": "ARBUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.38,
+     "cumulativeMovePct": 11.01
+    },
+    {
+     "symbol": "NEIROUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.37,
+     "cumulativeMovePct": 10.96
+    },
+    {
+     "symbol": "ETCUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.31,
+     "cumulativeMovePct": 15.92
+    },
+    {
+     "symbol": "METAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.31,
+     "cumulativeMovePct": 4.53
+    },
+    {
+     "symbol": "INJUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.26,
+     "cumulativeMovePct": 5.06
+    },
+    {
+     "symbol": "USUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.25,
+     "cumulativeMovePct": 11.51
+    },
+    {
+     "symbol": "XLMUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 1.24,
+     "cumulativeMovePct": 9.05
+    },
+    {
+     "symbol": "VELODROMEUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 1.23,
+     "cumulativeMovePct": 14.04
+    },
+    {
+     "symbol": "LAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.21,
+     "cumulativeMovePct": 13.25
+    },
+    {
+     "symbol": "TNSRUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.11,
+     "cumulativeMovePct": 15.43
+    },
+    {
+     "symbol": "COTIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.1,
+     "cumulativeMovePct": 13.37
+    },
+    {
+     "symbol": "MANTRAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 1.03,
+     "cumulativeMovePct": 4.65
+    },
+    {
+     "symbol": "NEARUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 1.03,
+     "cumulativeMovePct": 10.93
+    },
+    {
+     "symbol": "FOGOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.93,
+     "cumulativeMovePct": 4.32
+    },
+    {
+     "symbol": "AVAXUSDT",
+     "closedCalls": 4,
+     "cumulativeR": 0.9,
+     "cumulativeMovePct": 14.13
+    },
+    {
+     "symbol": "XVSUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.84,
+     "cumulativeMovePct": 7.75
+    },
+    {
+     "symbol": "CASHCATUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.83,
+     "cumulativeMovePct": 10.64
+    },
+    {
+     "symbol": "AAVEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.83,
+     "cumulativeMovePct": 4.5
+    },
+    {
+     "symbol": "KGENUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 0.81,
+     "cumulativeMovePct": 6.21
+    },
+    {
+     "symbol": "BRETTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.78,
+     "cumulativeMovePct": 5.76
+    },
+    {
+     "symbol": "BANANAS31USDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.77,
+     "cumulativeMovePct": 7.39
+    },
+    {
+     "symbol": "MUBARAKUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.76,
+     "cumulativeMovePct": 3.67
+    },
+    {
+     "symbol": "WIFUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.76,
+     "cumulativeMovePct": 3.1
+    },
+    {
+     "symbol": "BREVUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.72,
+     "cumulativeMovePct": 5.99
+    },
+    {
+     "symbol": "AIGENSYNUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.72,
+     "cumulativeMovePct": 3.1
+    },
+    {
+     "symbol": "ICPUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.68,
+     "cumulativeMovePct": 4.74
+    },
+    {
+     "symbol": "KAVAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.68,
+     "cumulativeMovePct": 2.18
+    },
+    {
+     "symbol": "HUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.68,
+     "cumulativeMovePct": 3.41
+    },
+    {
+     "symbol": "DEXEUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 0.65,
+     "cumulativeMovePct": 5.96
+    },
+    {
+     "symbol": "ZKPUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.65,
+     "cumulativeMovePct": 4.27
+    },
+    {
+     "symbol": "EGLDUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.61,
+     "cumulativeMovePct": 5.65
+    },
+    {
+     "symbol": "XPLUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.55,
+     "cumulativeMovePct": 7.34
+    },
+    {
+     "symbol": "MMTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.5,
+     "cumulativeMovePct": 6.17
+    },
+    {
+     "symbol": "ONTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.5,
+     "cumulativeMovePct": 2.72
+    },
+    {
+     "symbol": "TRIAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.48,
+     "cumulativeMovePct": 5.57
+    },
+    {
+     "symbol": "ALGOUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 0.48,
+     "cumulativeMovePct": 0.22
+    },
+    {
+     "symbol": "PENDLEUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 0.48,
+     "cumulativeMovePct": 6.87
+    },
+    {
+     "symbol": "ATOMUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.47,
+     "cumulativeMovePct": 3.04
+    },
+    {
+     "symbol": "FARTCOINUSDT",
+     "closedCalls": 3,
+     "cumulativeR": 0.44,
+     "cumulativeMovePct": 0.48
+    },
+    {
+     "symbol": "ASTRUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.43,
+     "cumulativeMovePct": 3.67
+    },
+    {
+     "symbol": "WLFIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.42,
+     "cumulativeMovePct": 1.75
+    },
+    {
+     "symbol": "XAGUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.4,
+     "cumulativeMovePct": 7.77
+    },
+    {
+     "symbol": "LIGHTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.33,
+     "cumulativeMovePct": 1.81
+    },
+    {
+     "symbol": "GRIFFAINUSDT",
+     "closedCalls": 2,
+     "cumulativeR": 0.27,
+     "cumulativeMovePct": 2.32
+    },
+    {
+     "symbol": "RECALLUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.25,
+     "cumulativeMovePct": 2.05
+    },
+    {
+     "symbol": "OPNUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.25,
+     "cumulativeMovePct": 1.42
+    },
+    {
+     "symbol": "VVVUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.17,
+     "cumulativeMovePct": 1.96
+    },
+    {
+     "symbol": "TQQQUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.17,
+     "cumulativeMovePct": 0.49
+    },
+    {
+     "symbol": "ZBTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.12,
+     "cumulativeMovePct": 1.17
+    },
+    {
+     "symbol": "BLUAIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.11,
+     "cumulativeMovePct": 1.6
+    },
+    {
+     "symbol": "NOMUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.09,
+     "cumulativeMovePct": 1.97
+    },
+    {
+     "symbol": "BICOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.05,
+     "cumulativeMovePct": 0.45
+    },
+    {
+     "symbol": "MANAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0.03,
+     "cumulativeMovePct": 0.63
+    },
+    {
+     "symbol": "KASUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "INXUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "OGNUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "ETHFIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "ARPAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "BASUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "ONDSUSDT",
+     "closedCalls": 1,
+     "cumulativeR": 0,
+     "cumulativeMovePct": 0
+    },
+    {
+     "symbol": "RLCUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -0.01,
+     "cumulativeMovePct": 2.47
+    },
+    {
+     "symbol": "MEGAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.07,
+     "cumulativeMovePct": -0.63
+    },
+    {
+     "symbol": "BLURUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.09,
+     "cumulativeMovePct": -0.8
+    },
+    {
+     "symbol": "BSVUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.1,
+     "cumulativeMovePct": -0.8
+    },
+    {
+     "symbol": "VELVETUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.11,
+     "cumulativeMovePct": -1.26
+    },
+    {
+     "symbol": "EPICUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.12,
+     "cumulativeMovePct": -1.71
+    },
+    {
+     "symbol": "BANDUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.12,
+     "cumulativeMovePct": -0.72
+    },
+    {
+     "symbol": "ETHUSDT",
+     "closedCalls": 7,
+     "cumulativeR": -0.19,
+     "cumulativeMovePct": -33.31
+    },
+    {
+     "symbol": "DOGEUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.21,
+     "cumulativeMovePct": -0.81
+    },
+    {
+     "symbol": "BEATUSDT",
+     "closedCalls": 4,
+     "cumulativeR": -0.22,
+     "cumulativeMovePct": 8.77
+    },
+    {
+     "symbol": "1000LUNCUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.31,
+     "cumulativeMovePct": -1.93
+    },
+    {
+     "symbol": "ARKMUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -0.31,
+     "cumulativeMovePct": -2.44
+    },
+    {
+     "symbol": "CRVUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -0.45,
+     "cumulativeMovePct": -4.66
+    },
+    {
+     "symbol": "LTCUSDT",
+     "closedCalls": 4,
+     "cumulativeR": -0.5,
+     "cumulativeMovePct": -4.22
+    },
+    {
+     "symbol": "UNIUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -0.55,
+     "cumulativeMovePct": -2.59
+    },
+    {
+     "symbol": "TUTUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -0.57,
+     "cumulativeMovePct": -1.53
+    },
+    {
+     "symbol": "LABUSDT",
+     "closedCalls": 4,
+     "cumulativeR": -0.73,
+     "cumulativeMovePct": -0.34
+    },
+    {
+     "symbol": "SOSOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.17
+    },
+    {
+     "symbol": "CCUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -5.03
+    },
+    {
+     "symbol": "1000TURBOUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -5.31
+    },
+    {
+     "symbol": "HEIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -5.03
+    },
+    {
+     "symbol": "ICNTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -10.93
+    },
+    {
+     "symbol": "XTZUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -7.45
+    },
+    {
+     "symbol": "BSBUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -6.25
+    },
+    {
+     "symbol": "GRASSUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.44
+    },
+    {
+     "symbol": "ZAMAUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.63
+    },
+    {
+     "symbol": "SIRENUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -7.9
+    },
+    {
+     "symbol": "ZRXUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.5
+    },
+    {
+     "symbol": "PROMPTUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.06
+    },
+    {
+     "symbol": "BNBUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -0.71
+    },
+    {
+     "symbol": "POWERUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.25
+    },
+    {
+     "symbol": "SUIUSDT",
+     "closedCalls": 1,
+     "cumulativeR": -1,
+     "cumulativeMovePct": -3.7
+    },
+    {
+     "symbol": "POLUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -1.02,
+     "cumulativeMovePct": -8.82
+    },
+    {
+     "symbol": "LITUSDT",
+     "closedCalls": 3,
+     "cumulativeR": -1.19,
+     "cumulativeMovePct": -2.68
+    },
+    {
+     "symbol": "LINKUSDT",
+     "closedCalls": 3,
+     "cumulativeR": -1.29,
+     "cumulativeMovePct": 2.57
+    },
+    {
+     "symbol": "WLDUSDT",
+     "closedCalls": 2,
+     "cumulativeR": -2,
+     "cumulativeMovePct": -10.21
+    }
+   ],
+   "cumulativeMovePct": 639.67,
+   "averageMovePct": 2.79,
+   "bestCallPct": 44.53,
+   "maxDrawdownPct": -28.04,
+   "outcomeBucketsPct": [
+    {
+     "label": "\u2264\u221210%",
+     "calls": 19
+    },
+    {
+     "label": "\u22125%",
+     "calls": 30
+    },
+    {
+     "label": "0%",
+     "calls": 81
+    },
+    {
+     "label": "+5%",
+     "calls": 55
+    },
+    {
+     "label": "+10%",
+     "calls": 20
+    },
+    {
+     "label": "+15%",
+     "calls": 12
+    },
+    {
+     "label": "\u2265+20%",
+     "calls": 12
+    }
+   ],
+   "cumulativeFollowerR": 90.74,
+   "averageFollowerR": 0.4,
+   "cumulativeFollowerMovePct": 610.18,
+   "averageFollowerMovePct": 2.66
+  }
+ ]
+}
