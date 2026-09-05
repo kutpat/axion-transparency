@@ -1,6 +1,6 @@
 # Format
 
-Schema `axion-attestation/1`.
+Schema `axion-attestation/1`. How the bytes are hashed, what is public while a call is open, and how to check each anchor are in [spec.md](spec.md).
 
 ## Ids
 
@@ -29,39 +29,3 @@ Every key is always present; an absent value is `null`.
 | `salt` | 32 random bytes as 64 hex characters |
 
 Nothing the analyst typed is in a record. Entry and target ids are kept only when they match `^[A-Za-z0-9 _.:/-]{1,80}$`, otherwise they are `entry-N` or `target-N`.
-
-## Canonical form and hash
-
-The hashed bytes are JSON with keys sorted by code point, separators `,` and `:`, no whitespace, no trailing newline. Every string is printable ASCII. There are no JSON numbers: counts and ids are decimal strings, prices are shortest plain decimals (`116500`, `0.386`, `-1.5`, `0`). Timestamps are `YYYY-MM-DDTHH:MM:SS.ffffffZ`. Booleans are `true` and `false`.
-
-`record_hash` is SHA-256 of those bytes, lowercase hex. A file in `records/` is exactly those bytes:
-
-    sha256sum records/AXN-2026-08-20-00345/1.json
-
-## Envelope
-
-One line per record in `log/<UTC day>.jsonl`, appended in the order Core built the records: `schema`, `record_id`, `signal_id`, `record_number`, `kind`, `instrument`, `side`, `analyst`, `posted_at`, `committed_at`, `record_hash`. The line is the canonical form of that object. `committed_at` is when Core built the record; the anchors bound that time, not `posted_at`.
-
-## Reveal
-
-A trade's records are published to `records/<signal_id>/<n>.json` when the official portfolio finalises it, when its ledger status is terminal, when it is a re-post of a revealed trade, or when its opening is more than 90 days old. Reveal is never undone. A record built after the reveal is published in full together with its log line.
-
-## Anchors
-
-GitHub: the log line's commit. Readable, but the owner of a repository can rewrite history, so it is the index, not the proof.
-
-Rekor: `proofs/<signal_id>/<n>.rekor.json` names the entry. Fetch it from Rekor by `log_index`, decode `body` (a `hashedrekord`), check `spec.data.hash.value` equals the record hash and `spec.signature.publicKey.content` decodes to the key in `keys/`. `integratedTime` is the time Rekor accepted it. The signature is ECDSA P-256 over SHA-256 of the record bytes, DER encoded:
-
-    curl -s "https://rekor.sigstore.dev/api/v1/log/entries?logIndex=<log_index>" > entry.json
-    jq -r '.[].body' entry.json | base64 -d | jq -r '.spec.signature.content' | base64 -d > sig.der
-    openssl dgst -sha256 -verify keys/axion-2026-09.pub.pem -signature sig.der records/<signal_id>/<n>.json
-
-OpenTimestamps: `proofs/<signal_id>/<n>.ots` is a detached proof of the record hash. It appears once the calendars have committed it to a Bitcoin block.
-
-    ots verify -d <record_hash> proofs/<signal_id>/<n>.ots
-    ots verify -f records/<signal_id>/<n>.json proofs/<signal_id>/<n>.ots
-    ots info proofs/<signal_id>/<n>.ots
-
-## Versions
-
-A change to any key or rule is a new schema string. Records, hashes, salts and anchors are never rewritten; a mistake is a new record. A new signing key is a new file in `keys/` and a new `key_id` in the Rekor references.
