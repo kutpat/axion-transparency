@@ -1,0 +1,2635 @@
+{
+ "schema": "axion-performance-figures/1",
+ "portfolio_name": "official-v4",
+ "generated_at": "2026-09-06T12:55:33.138750Z",
+ "calculation_version": 2,
+ "open_calls": 24,
+ "windows": [
+  {
+   "window_days": 7,
+   "window_start": "2026-08-30T12:55:33.138750Z",
+   "closed_calls": 21,
+   "wins": 17,
+   "losses": 4,
+   "breakevens": 0,
+   "win_rate_pct": 80.95,
+   "r_qualified_calls": 21,
+   "cumulative_r": 11.96,
+   "average_r": 0.57,
+   "best_call_r": 2.16,
+   "max_drawdown_r": 0,
+   "cumulative_move_pct": 56.08,
+   "average_move_pct": 2.67,
+   "best_call_pct": 10.96,
+   "max_drawdown_pct": -3.56,
+   "cumulative_follower_r": 11.48,
+   "average_follower_r": 0.55,
+   "cumulative_follower_move_pct": 53.64,
+   "average_follower_move_pct": 2.55,
+   "daily": [
+    {
+     "day": "2026-08-30T00:00:00Z",
+     "r": 0.72,
+     "pct": 6.91,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-31T00:00:00Z",
+     "r": 0.32,
+     "pct": 2.43,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-09-01T00:00:00Z",
+     "r": 0.62,
+     "pct": -3.56,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-09-02T00:00:00Z",
+     "r": 1.1,
+     "pct": 8.07,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-09-03T00:00:00Z",
+     "r": 2.98,
+     "pct": 3.14,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-09-04T00:00:00Z",
+     "r": 4.08,
+     "pct": 29.97,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-09-05T00:00:00Z",
+     "r": 2.14,
+     "pct": 9.12,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-09-06T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    }
+   ],
+   "analysts": [
+    {
+     "analyst": "Electron",
+     "slug": "discord-947954207493853214",
+     "closed_calls": 6,
+     "wins": 5,
+     "losses": 1,
+     "win_rate_pct": 83.33,
+     "cumulative_r": 3.28,
+     "cumulative_move_pct": 22.5
+    },
+    {
+     "analyst": "SaltWayer",
+     "slug": "discord-465549640788606976",
+     "closed_calls": 2,
+     "wins": 2,
+     "losses": 0,
+     "win_rate_pct": 100,
+     "cumulative_r": 3.18,
+     "cumulative_move_pct": 12.73
+    },
+    {
+     "analyst": "Triggerxbt",
+     "slug": "discord-704407068278259783",
+     "closed_calls": 3,
+     "wins": 2,
+     "losses": 1,
+     "win_rate_pct": 66.67,
+     "cumulative_r": 2.45,
+     "cumulative_move_pct": 5.99
+    },
+    {
+     "analyst": "Pipfessor",
+     "slug": "discord-965886211937947698",
+     "closed_calls": 2,
+     "wins": 2,
+     "losses": 0,
+     "win_rate_pct": 100,
+     "cumulative_r": 1.64,
+     "cumulative_move_pct": 8.01
+    },
+    {
+     "analyst": "Belovy",
+     "slug": "discord-755569441323876533",
+     "closed_calls": 1,
+     "wins": 1,
+     "losses": 0,
+     "win_rate_pct": 100,
+     "cumulative_r": 0.81,
+     "cumulative_move_pct": 5.8
+    },
+    {
+     "analyst": "D3LTA",
+     "slug": "discord-819513060522721280",
+     "closed_calls": 1,
+     "wins": 1,
+     "losses": 0,
+     "win_rate_pct": 100,
+     "cumulative_r": 0.6,
+     "cumulative_move_pct": 2.96
+    },
+    {
+     "analyst": "gaijin",
+     "slug": "discord-522797407788859393",
+     "closed_calls": 1,
+     "wins": 1,
+     "losses": 0,
+     "win_rate_pct": 100,
+     "cumulative_r": 0.27,
+     "cumulative_move_pct": 3.57
+    },
+    {
+     "analyst": "Thmassz",
+     "slug": "discord-1411901953427902605",
+     "closed_calls": 3,
+     "wins": 2,
+     "losses": 1,
+     "win_rate_pct": 66.67,
+     "cumulative_r": 0.15,
+     "cumulative_move_pct": -1.23
+    },
+    {
+     "analyst": "Bitcoin Wizard",
+     "slug": "discord-731235844077387816",
+     "closed_calls": 2,
+     "wins": 1,
+     "losses": 1,
+     "win_rate_pct": 50,
+     "cumulative_r": -0.42,
+     "cumulative_move_pct": -4.25
+    }
+   ],
+   "instruments": [
+    {
+     "symbol": "BTCUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 2.94,
+     "cumulative_move_pct": 7.69
+    },
+    {
+     "symbol": "BICOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 2.14,
+     "cumulative_move_pct": 9.12
+    },
+    {
+     "symbol": "DOTUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.44,
+     "cumulative_move_pct": 8.4
+    },
+    {
+     "symbol": "NEIROUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.37,
+     "cumulative_move_pct": 10.96
+    },
+    {
+     "symbol": "METAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.31,
+     "cumulative_move_pct": 4.53
+    },
+    {
+     "symbol": "PEOPLEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.04,
+     "cumulative_move_pct": 3.61
+    },
+    {
+     "symbol": "AAVEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.83,
+     "cumulative_move_pct": 4.5
+    },
+    {
+     "symbol": "XLMUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.81,
+     "cumulative_move_pct": 5.8
+    },
+    {
+     "symbol": "BRETTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.78,
+     "cumulative_move_pct": 5.76
+    },
+    {
+     "symbol": "ZKPUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.65,
+     "cumulative_move_pct": 4.27
+    },
+    {
+     "symbol": "EGLDUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.61,
+     "cumulative_move_pct": 5.65
+    },
+    {
+     "symbol": "FARTCOINUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.6,
+     "cumulative_move_pct": 2.96
+    },
+    {
+     "symbol": "KGENUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.47,
+     "cumulative_move_pct": 3.18
+    },
+    {
+     "symbol": "AVAXUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.32,
+     "cumulative_move_pct": 2.43
+    },
+    {
+     "symbol": "TQQQUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.17,
+     "cumulative_move_pct": 0.49
+    },
+    {
+     "symbol": "ETHUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.49,
+     "cumulative_move_pct": -1.7
+    },
+    {
+     "symbol": "BOTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.51
+    },
+    {
+     "symbol": "XRPUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -8.16
+    },
+    {
+     "symbol": "GRIFFAINUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1.03,
+     "cumulative_move_pct": -9.9
+    }
+   ],
+   "outcome_buckets": [
+    {
+     "label": "\u2264\u22122R",
+     "calls": 0
+    },
+    {
+     "label": "\u22121R",
+     "calls": 3
+    },
+    {
+     "label": "0R",
+     "calls": 5
+    },
+    {
+     "label": "+1R",
+     "calls": 11
+    },
+    {
+     "label": "+2R",
+     "calls": 2
+    },
+    {
+     "label": "+3R",
+     "calls": 0
+    },
+    {
+     "label": "\u2265+4R",
+     "calls": 0
+    }
+   ],
+   "outcome_buckets_pct": [
+    {
+     "label": "\u2264\u221210%",
+     "calls": 2
+    },
+    {
+     "label": "\u22125%",
+     "calls": 1
+    },
+    {
+     "label": "0%",
+     "calls": 4
+    },
+    {
+     "label": "+5%",
+     "calls": 12
+    },
+    {
+     "label": "+10%",
+     "calls": 2
+    },
+    {
+     "label": "+15%",
+     "calls": 0
+    },
+    {
+     "label": "\u2265+20%",
+     "calls": 0
+    }
+   ]
+  },
+  {
+   "window_days": 30,
+   "window_start": "2026-08-07T12:55:33.138750Z",
+   "closed_calls": 109,
+   "wins": 76,
+   "losses": 28,
+   "breakevens": 5,
+   "win_rate_pct": 73.08,
+   "r_qualified_calls": 109,
+   "cumulative_r": 76.68,
+   "average_r": 0.7,
+   "best_call_r": 11.89,
+   "max_drawdown_r": -1.77,
+   "cumulative_move_pct": 431,
+   "average_move_pct": 3.95,
+   "best_call_pct": 33.51,
+   "max_drawdown_pct": -19.09,
+   "cumulative_follower_r": 72.49,
+   "average_follower_r": 0.67,
+   "cumulative_follower_move_pct": 417.95,
+   "average_follower_move_pct": 3.83,
+   "daily": [
+    {
+     "day": "2026-08-07T00:00:00Z",
+     "r": 0.55,
+     "pct": 3.93,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-08T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-08-09T00:00:00Z",
+     "r": -1.77,
+     "pct": -4.96,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-10T00:00:00Z",
+     "r": 2.54,
+     "pct": 30.33,
+     "closed_calls": 6
+    },
+    {
+     "day": "2026-08-11T00:00:00Z",
+     "r": 15.57,
+     "pct": 35.1,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-08-12T00:00:00Z",
+     "r": -0.23,
+     "pct": 2.58,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-13T00:00:00Z",
+     "r": 1.88,
+     "pct": 16.82,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-14T00:00:00Z",
+     "r": 1.61,
+     "pct": 8.15,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-15T00:00:00Z",
+     "r": 0.17,
+     "pct": 10.9,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-16T00:00:00Z",
+     "r": 0.76,
+     "pct": 3.1,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-17T00:00:00Z",
+     "r": -0.41,
+     "pct": -0.77,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-18T00:00:00Z",
+     "r": 0.7,
+     "pct": 3.86,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-19T00:00:00Z",
+     "r": 7.56,
+     "pct": 44.15,
+     "closed_calls": 15
+    },
+    {
+     "day": "2026-08-20T00:00:00Z",
+     "r": 12.64,
+     "pct": 67.69,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-08-21T00:00:00Z",
+     "r": 1.69,
+     "pct": -7.89,
+     "closed_calls": 7
+    },
+    {
+     "day": "2026-08-22T00:00:00Z",
+     "r": 12.57,
+     "pct": 107.14,
+     "closed_calls": 10
+    },
+    {
+     "day": "2026-08-23T00:00:00Z",
+     "r": 3.5,
+     "pct": 40.26,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-24T00:00:00Z",
+     "r": 2.39,
+     "pct": 15.98,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-25T00:00:00Z",
+     "r": -0.32,
+     "pct": -0.29,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-26T00:00:00Z",
+     "r": 3.48,
+     "pct": 12.97,
+     "closed_calls": 6
+    },
+    {
+     "day": "2026-08-27T00:00:00Z",
+     "r": -1.66,
+     "pct": -19.09,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-28T00:00:00Z",
+     "r": 2.52,
+     "pct": 8.86,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-08-29T00:00:00Z",
+     "r": -0.02,
+     "pct": -0.24,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-30T00:00:00Z",
+     "r": -0.28,
+     "pct": 3.25,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-08-31T00:00:00Z",
+     "r": 0.32,
+     "pct": 2.43,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-09-01T00:00:00Z",
+     "r": 0.62,
+     "pct": -3.56,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-09-02T00:00:00Z",
+     "r": 1.1,
+     "pct": 8.07,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-09-03T00:00:00Z",
+     "r": 2.98,
+     "pct": 3.14,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-09-04T00:00:00Z",
+     "r": 4.08,
+     "pct": 29.97,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-09-05T00:00:00Z",
+     "r": 2.14,
+     "pct": 9.12,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-09-06T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    }
+   ],
+   "analysts": [
+    {
+     "analyst": "D3LTA",
+     "slug": "discord-819513060522721280",
+     "closed_calls": 9,
+     "wins": 8,
+     "losses": 1,
+     "win_rate_pct": 88.89,
+     "cumulative_r": 22.58,
+     "cumulative_move_pct": 115.67
+    },
+    {
+     "analyst": "gaijin",
+     "slug": "discord-522797407788859393",
+     "closed_calls": 21,
+     "wins": 16,
+     "losses": 5,
+     "win_rate_pct": 76.19,
+     "cumulative_r": 17.63,
+     "cumulative_move_pct": 109.59
+    },
+    {
+     "analyst": "Thmassz",
+     "slug": "discord-1411901953427902605",
+     "closed_calls": 11,
+     "wins": 7,
+     "losses": 4,
+     "win_rate_pct": 63.64,
+     "cumulative_r": 7.94,
+     "cumulative_move_pct": 44.79
+    },
+    {
+     "analyst": "Belovy",
+     "slug": "discord-755569441323876533",
+     "closed_calls": 6,
+     "wins": 5,
+     "losses": 1,
+     "win_rate_pct": 83.33,
+     "cumulative_r": 6.28,
+     "cumulative_move_pct": 21.93
+    },
+    {
+     "analyst": "Triggerxbt",
+     "slug": "discord-704407068278259783",
+     "closed_calls": 6,
+     "wins": 5,
+     "losses": 1,
+     "win_rate_pct": 83.33,
+     "cumulative_r": 5.83,
+     "cumulative_move_pct": 10.61
+    },
+    {
+     "analyst": "Pipfessor",
+     "slug": "discord-965886211937947698",
+     "closed_calls": 10,
+     "wins": 8,
+     "losses": 1,
+     "win_rate_pct": 88.89,
+     "cumulative_r": 5.39,
+     "cumulative_move_pct": 28.88
+    },
+    {
+     "analyst": "Bitcoin Wizard",
+     "slug": "discord-731235844077387816",
+     "closed_calls": 12,
+     "wins": 8,
+     "losses": 4,
+     "win_rate_pct": 66.67,
+     "cumulative_r": 4.94,
+     "cumulative_move_pct": 48.01
+    },
+    {
+     "analyst": "Electron",
+     "slug": "discord-947954207493853214",
+     "closed_calls": 21,
+     "wins": 12,
+     "losses": 6,
+     "win_rate_pct": 66.67,
+     "cumulative_r": 4.26,
+     "cumulative_move_pct": 33.28
+    },
+    {
+     "analyst": "SaltWayer",
+     "slug": "discord-465549640788606976",
+     "closed_calls": 11,
+     "wins": 6,
+     "losses": 4,
+     "win_rate_pct": 60,
+     "cumulative_r": 2,
+     "cumulative_move_pct": 11.3
+    },
+    {
+     "analyst": "Natrix",
+     "slug": "discord-308183920015573004",
+     "closed_calls": 2,
+     "wins": 1,
+     "losses": 1,
+     "win_rate_pct": 50,
+     "cumulative_r": -0.17,
+     "cumulative_move_pct": 6.94
+    }
+   ],
+   "instruments": [
+    {
+     "symbol": "ADAUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 12.77,
+     "cumulative_move_pct": 27.28
+    },
+    {
+     "symbol": "HYPEUSDT",
+     "closed_calls": 4,
+     "cumulative_r": 6.77,
+     "cumulative_move_pct": 50.98
+    },
+    {
+     "symbol": "BROCCOLI714USDT",
+     "closed_calls": 1,
+     "cumulative_r": 6.7,
+     "cumulative_move_pct": 30.65
+    },
+    {
+     "symbol": "SOLUSDT",
+     "closed_calls": 4,
+     "cumulative_r": 5.23,
+     "cumulative_move_pct": 23.31
+    },
+    {
+     "symbol": "DOTUSDT",
+     "closed_calls": 6,
+     "cumulative_r": 4.95,
+     "cumulative_move_pct": 33.56
+    },
+    {
+     "symbol": "BTCUSDT",
+     "closed_calls": 9,
+     "cumulative_r": 4.91,
+     "cumulative_move_pct": -2.44
+    },
+    {
+     "symbol": "VELODROMEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 3.32,
+     "cumulative_move_pct": 33.51
+    },
+    {
+     "symbol": "RVNUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 2.97,
+     "cumulative_move_pct": 21.18
+    },
+    {
+     "symbol": "TAOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 2.57,
+     "cumulative_move_pct": 22.19
+    },
+    {
+     "symbol": "XRPUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 2.52,
+     "cumulative_move_pct": 15.86
+    },
+    {
+     "symbol": "BICOUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 2.19,
+     "cumulative_move_pct": 9.57
+    },
+    {
+     "symbol": "ONDOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 2.15,
+     "cumulative_move_pct": 9.06
+    },
+    {
+     "symbol": "PEOPLEUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.82,
+     "cumulative_move_pct": 7.06
+    },
+    {
+     "symbol": "ZKUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.66,
+     "cumulative_move_pct": 12.9
+    },
+    {
+     "symbol": "TIAUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 1.59,
+     "cumulative_move_pct": 14.99
+    },
+    {
+     "symbol": "FARTCOINUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.44,
+     "cumulative_move_pct": 8.65
+    },
+    {
+     "symbol": "BOTUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.39,
+     "cumulative_move_pct": 12.47
+    },
+    {
+     "symbol": "ARBUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.38,
+     "cumulative_move_pct": 11.01
+    },
+    {
+     "symbol": "NEIROUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.37,
+     "cumulative_move_pct": 10.96
+    },
+    {
+     "symbol": "ETCUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.31,
+     "cumulative_move_pct": 15.92
+    },
+    {
+     "symbol": "METAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.31,
+     "cumulative_move_pct": 4.53
+    },
+    {
+     "symbol": "XLMUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.15,
+     "cumulative_move_pct": 7.65
+    },
+    {
+     "symbol": "COTIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.1,
+     "cumulative_move_pct": 13.37
+    },
+    {
+     "symbol": "MANTRAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.03,
+     "cumulative_move_pct": 4.65
+    },
+    {
+     "symbol": "NEARUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.03,
+     "cumulative_move_pct": 10.93
+    },
+    {
+     "symbol": "HOLOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.93,
+     "cumulative_move_pct": 4.85
+    },
+    {
+     "symbol": "FOGOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.93,
+     "cumulative_move_pct": 4.32
+    },
+    {
+     "symbol": "AVAXUSDT",
+     "closed_calls": 4,
+     "cumulative_r": 0.9,
+     "cumulative_move_pct": 14.13
+    },
+    {
+     "symbol": "CASHCATUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.83,
+     "cumulative_move_pct": 10.64
+    },
+    {
+     "symbol": "AAVEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.83,
+     "cumulative_move_pct": 4.5
+    },
+    {
+     "symbol": "KGENUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 0.81,
+     "cumulative_move_pct": 6.21
+    },
+    {
+     "symbol": "BRETTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.78,
+     "cumulative_move_pct": 5.76
+    },
+    {
+     "symbol": "BANANAS31USDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.77,
+     "cumulative_move_pct": 7.39
+    },
+    {
+     "symbol": "WIFUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.76,
+     "cumulative_move_pct": 3.1
+    },
+    {
+     "symbol": "ICPUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.68,
+     "cumulative_move_pct": 4.74
+    },
+    {
+     "symbol": "KAVAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.68,
+     "cumulative_move_pct": 2.18
+    },
+    {
+     "symbol": "HUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.68,
+     "cumulative_move_pct": 3.41
+    },
+    {
+     "symbol": "ZKPUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.65,
+     "cumulative_move_pct": 4.27
+    },
+    {
+     "symbol": "EGLDUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.61,
+     "cumulative_move_pct": 5.65
+    },
+    {
+     "symbol": "CRVUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.55,
+     "cumulative_move_pct": 3.93
+    },
+    {
+     "symbol": "ONTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.5,
+     "cumulative_move_pct": 2.72
+    },
+    {
+     "symbol": "ATOMUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.47,
+     "cumulative_move_pct": 3.04
+    },
+    {
+     "symbol": "GRIFFAINUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 0.27,
+     "cumulative_move_pct": 2.32
+    },
+    {
+     "symbol": "PENDLEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.26,
+     "cumulative_move_pct": 3.31
+    },
+    {
+     "symbol": "OPNUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.25,
+     "cumulative_move_pct": 1.42
+    },
+    {
+     "symbol": "TQQQUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.17,
+     "cumulative_move_pct": 0.49
+    },
+    {
+     "symbol": "ZBTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.12,
+     "cumulative_move_pct": 1.17
+    },
+    {
+     "symbol": "ETHFIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "ARPAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "BASUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "ONDSUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "LTCUSDT",
+     "closed_calls": 3,
+     "cumulative_r": -0.26,
+     "cumulative_move_pct": -2.56
+    },
+    {
+     "symbol": "ETHUSDT",
+     "closed_calls": 5,
+     "cumulative_r": -0.29,
+     "cumulative_move_pct": -37.09
+    },
+    {
+     "symbol": "DEXEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.41,
+     "cumulative_move_pct": -0.77
+    },
+    {
+     "symbol": "TUTUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -0.57,
+     "cumulative_move_pct": -1.53
+    },
+    {
+     "symbol": "BEATUSDT",
+     "closed_calls": 3,
+     "cumulative_r": -0.83,
+     "cumulative_move_pct": 4.78
+    },
+    {
+     "symbol": "LITUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -5.54
+    },
+    {
+     "symbol": "UNIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -4.7
+    },
+    {
+     "symbol": "BNBUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -0.71
+    },
+    {
+     "symbol": "PROMPTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.06
+    },
+    {
+     "symbol": "LDOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -7.74
+    },
+    {
+     "symbol": "POWERUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.25
+    },
+    {
+     "symbol": "SUIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.7
+    },
+    {
+     "symbol": "LABUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.66
+    },
+    {
+     "symbol": "POLUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -1.02,
+     "cumulative_move_pct": -8.82
+    }
+   ],
+   "outcome_buckets": [
+    {
+     "label": "\u2264\u22122R",
+     "calls": 0
+    },
+    {
+     "label": "\u22121R",
+     "calls": 23
+    },
+    {
+     "label": "0R",
+     "calls": 30
+    },
+    {
+     "label": "+1R",
+     "calls": 38
+    },
+    {
+     "label": "+2R",
+     "calls": 9
+    },
+    {
+     "label": "+3R",
+     "calls": 3
+    },
+    {
+     "label": "\u2265+4R",
+     "calls": 6
+    }
+   ],
+   "outcome_buckets_pct": [
+    {
+     "label": "\u2264\u221210%",
+     "calls": 8
+    },
+    {
+     "label": "\u22125%",
+     "calls": 11
+    },
+    {
+     "label": "0%",
+     "calls": 32
+    },
+    {
+     "label": "+5%",
+     "calls": 31
+    },
+    {
+     "label": "+10%",
+     "calls": 11
+    },
+    {
+     "label": "+15%",
+     "calls": 9
+    },
+    {
+     "label": "\u2265+20%",
+     "calls": 7
+    }
+   ]
+  },
+  {
+   "window_days": 90,
+   "window_start": "2026-06-08T12:55:33.138750Z",
+   "closed_calls": 229,
+   "wins": 142,
+   "losses": 76,
+   "breakevens": 11,
+   "win_rate_pct": 65.14,
+   "r_qualified_calls": 228,
+   "cumulative_r": 101.72,
+   "average_r": 0.45,
+   "best_call_r": 11.89,
+   "max_drawdown_r": -5.26,
+   "cumulative_move_pct": 648.53,
+   "average_move_pct": 2.83,
+   "best_call_pct": 44.53,
+   "max_drawdown_pct": -28.04,
+   "cumulative_follower_r": 92.85,
+   "average_follower_r": 0.41,
+   "cumulative_follower_move_pct": 619.09,
+   "average_follower_move_pct": 2.7,
+   "daily": [
+    {
+     "day": "2026-06-08T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-06-09T00:00:00Z",
+     "r": 0.51,
+     "pct": 1.6,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-06-10T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-06-11T00:00:00Z",
+     "r": -1.14,
+     "pct": -11.09,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-06-12T00:00:00Z",
+     "r": -2,
+     "pct": -7.86,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-06-13T00:00:00Z",
+     "r": 0.54,
+     "pct": 3.25,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-06-14T00:00:00Z",
+     "r": 0.41,
+     "pct": 2.57,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-06-15T00:00:00Z",
+     "r": -1.45,
+     "pct": -14.91,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-06-16T00:00:00Z",
+     "r": 0.48,
+     "pct": 5.57,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-06-17T00:00:00Z",
+     "r": 1.32,
+     "pct": 12.13,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-06-18T00:00:00Z",
+     "r": 1.99,
+     "pct": 38.02,
+     "closed_calls": 6
+    },
+    {
+     "day": "2026-06-19T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-06-20T00:00:00Z",
+     "r": 0.54,
+     "pct": 2.92,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-06-21T00:00:00Z",
+     "r": 0.11,
+     "pct": 1.6,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-06-22T00:00:00Z",
+     "r": -0.22,
+     "pct": 1.36,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-06-23T00:00:00Z",
+     "r": -0.56,
+     "pct": -4.39,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-06-24T00:00:00Z",
+     "r": -0.83,
+     "pct": -3.07,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-06-25T00:00:00Z",
+     "r": 1.19,
+     "pct": 16.77,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-06-26T00:00:00Z",
+     "r": 0.14,
+     "pct": 2.19,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-06-27T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-06-28T00:00:00Z",
+     "r": 0.1,
+     "pct": -1.1,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-06-29T00:00:00Z",
+     "r": 0.78,
+     "pct": 3.81,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-06-30T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-07-01T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-07-02T00:00:00Z",
+     "r": -0.47,
+     "pct": -2.01,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-03T00:00:00Z",
+     "r": 2.83,
+     "pct": 25.18,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-07-04T00:00:00Z",
+     "r": 0.22,
+     "pct": 3.56,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-05T00:00:00Z",
+     "r": 0.01,
+     "pct": 1.28,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-06T00:00:00Z",
+     "r": -0.31,
+     "pct": -1.93,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-07T00:00:00Z",
+     "r": -0.11,
+     "pct": -1.26,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-08T00:00:00Z",
+     "r": 1.46,
+     "pct": 13.05,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-07-09T00:00:00Z",
+     "r": 0.03,
+     "pct": 1.29,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-10T00:00:00Z",
+     "r": -2.31,
+     "pct": -16.14,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-11T00:00:00Z",
+     "r": 0.01,
+     "pct": 0.06,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-12T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-07-13T00:00:00Z",
+     "r": 0.87,
+     "pct": 10.17,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-14T00:00:00Z",
+     "r": -1.86,
+     "pct": -10.8,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-15T00:00:00Z",
+     "r": 0.61,
+     "pct": 3.99,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-16T00:00:00Z",
+     "r": -2.09,
+     "pct": -12.95,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-17T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-07-18T00:00:00Z",
+     "r": -0.21,
+     "pct": -0.81,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-19T00:00:00Z",
+     "r": 0.1,
+     "pct": 1.67,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-20T00:00:00Z",
+     "r": 0.74,
+     "pct": 0.46,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-07-21T00:00:00Z",
+     "r": -1.12,
+     "pct": 13.93,
+     "closed_calls": 6
+    },
+    {
+     "day": "2026-07-22T00:00:00Z",
+     "r": 4.46,
+     "pct": 24.06,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-23T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-07-24T00:00:00Z",
+     "r": 11.03,
+     "pct": 63.19,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-07-25T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-07-26T00:00:00Z",
+     "r": 0.21,
+     "pct": 9.68,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-07-27T00:00:00Z",
+     "r": -2.03,
+     "pct": -11.73,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-28T00:00:00Z",
+     "r": 1,
+     "pct": 3.86,
+     "closed_calls": 6
+    },
+    {
+     "day": "2026-07-29T00:00:00Z",
+     "r": -0.62,
+     "pct": -9.1,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-30T00:00:00Z",
+     "r": 5.98,
+     "pct": 17.91,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-07-31T00:00:00Z",
+     "r": -0.1,
+     "pct": -0.8,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-01T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-08-02T00:00:00Z",
+     "r": 2.17,
+     "pct": 11.15,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-03T00:00:00Z",
+     "r": 1.69,
+     "pct": 18.02,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-04T00:00:00Z",
+     "r": -2,
+     "pct": -0.54,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-05T00:00:00Z",
+     "r": 3.12,
+     "pct": 16.39,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-08-06T00:00:00Z",
+     "r": -0.18,
+     "pct": -2.67,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-08-07T00:00:00Z",
+     "r": 0.55,
+     "pct": 3.93,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-08T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    },
+    {
+     "day": "2026-08-09T00:00:00Z",
+     "r": -1.77,
+     "pct": -4.96,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-10T00:00:00Z",
+     "r": 2.54,
+     "pct": 30.33,
+     "closed_calls": 6
+    },
+    {
+     "day": "2026-08-11T00:00:00Z",
+     "r": 15.57,
+     "pct": 35.1,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-08-12T00:00:00Z",
+     "r": -0.23,
+     "pct": 2.58,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-13T00:00:00Z",
+     "r": 1.88,
+     "pct": 16.82,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-14T00:00:00Z",
+     "r": 1.61,
+     "pct": 8.15,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-15T00:00:00Z",
+     "r": 0.17,
+     "pct": 10.9,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-16T00:00:00Z",
+     "r": 0.76,
+     "pct": 3.1,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-17T00:00:00Z",
+     "r": -0.41,
+     "pct": -0.77,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-18T00:00:00Z",
+     "r": 0.7,
+     "pct": 3.86,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-19T00:00:00Z",
+     "r": 7.56,
+     "pct": 44.15,
+     "closed_calls": 15
+    },
+    {
+     "day": "2026-08-20T00:00:00Z",
+     "r": 12.64,
+     "pct": 67.69,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-08-21T00:00:00Z",
+     "r": 1.69,
+     "pct": -7.89,
+     "closed_calls": 7
+    },
+    {
+     "day": "2026-08-22T00:00:00Z",
+     "r": 12.57,
+     "pct": 107.14,
+     "closed_calls": 10
+    },
+    {
+     "day": "2026-08-23T00:00:00Z",
+     "r": 3.5,
+     "pct": 40.26,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-24T00:00:00Z",
+     "r": 2.39,
+     "pct": 15.98,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-25T00:00:00Z",
+     "r": -0.32,
+     "pct": -0.29,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-08-26T00:00:00Z",
+     "r": 3.48,
+     "pct": 12.97,
+     "closed_calls": 6
+    },
+    {
+     "day": "2026-08-27T00:00:00Z",
+     "r": -1.66,
+     "pct": -19.09,
+     "closed_calls": 3
+    },
+    {
+     "day": "2026-08-28T00:00:00Z",
+     "r": 2.52,
+     "pct": 8.86,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-08-29T00:00:00Z",
+     "r": -0.02,
+     "pct": -0.24,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-08-30T00:00:00Z",
+     "r": -0.28,
+     "pct": 3.25,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-08-31T00:00:00Z",
+     "r": 0.32,
+     "pct": 2.43,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-09-01T00:00:00Z",
+     "r": 0.62,
+     "pct": -3.56,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-09-02T00:00:00Z",
+     "r": 1.1,
+     "pct": 8.07,
+     "closed_calls": 2
+    },
+    {
+     "day": "2026-09-03T00:00:00Z",
+     "r": 2.98,
+     "pct": 3.14,
+     "closed_calls": 4
+    },
+    {
+     "day": "2026-09-04T00:00:00Z",
+     "r": 4.08,
+     "pct": 29.97,
+     "closed_calls": 5
+    },
+    {
+     "day": "2026-09-05T00:00:00Z",
+     "r": 2.14,
+     "pct": 9.12,
+     "closed_calls": 1
+    },
+    {
+     "day": "2026-09-06T00:00:00Z",
+     "r": 0,
+     "pct": 0,
+     "closed_calls": 0
+    }
+   ],
+   "analysts": [
+    {
+     "analyst": "D3LTA",
+     "slug": "discord-819513060522721280",
+     "closed_calls": 18,
+     "wins": 11,
+     "losses": 7,
+     "win_rate_pct": 61.11,
+     "cumulative_r": 21.42,
+     "cumulative_move_pct": 119.24
+    },
+    {
+     "analyst": "gaijin",
+     "slug": "discord-522797407788859393",
+     "closed_calls": 26,
+     "wins": 18,
+     "losses": 8,
+     "win_rate_pct": 69.23,
+     "cumulative_r": 16.37,
+     "cumulative_move_pct": 110.72
+    },
+    {
+     "analyst": "Pipfessor",
+     "slug": "discord-965886211937947698",
+     "closed_calls": 28,
+     "wins": 20,
+     "losses": 7,
+     "win_rate_pct": 74.07,
+     "cumulative_r": 12.3,
+     "cumulative_move_pct": 106.88
+    },
+    {
+     "analyst": "SaltWayer",
+     "slug": "discord-465549640788606976",
+     "closed_calls": 31,
+     "wins": 19,
+     "losses": 11,
+     "win_rate_pct": 63.33,
+     "cumulative_r": 12.08,
+     "cumulative_move_pct": 53.05
+    },
+    {
+     "analyst": "Belovy",
+     "slug": "discord-755569441323876533",
+     "closed_calls": 24,
+     "wins": 19,
+     "losses": 3,
+     "win_rate_pct": 86.36,
+     "cumulative_r": 11.36,
+     "cumulative_move_pct": 57.74
+    },
+    {
+     "analyst": "Bitcoin Wizard",
+     "slug": "discord-731235844077387816",
+     "closed_calls": 30,
+     "wins": 18,
+     "losses": 11,
+     "win_rate_pct": 62.07,
+     "cumulative_r": 8.91,
+     "cumulative_move_pct": 81.84
+    },
+    {
+     "analyst": "Thmassz",
+     "slug": "discord-1411901953427902605",
+     "closed_calls": 17,
+     "wins": 9,
+     "losses": 8,
+     "win_rate_pct": 52.94,
+     "cumulative_r": 7.75,
+     "cumulative_move_pct": 41.44
+    },
+    {
+     "analyst": "Electron",
+     "slug": "discord-947954207493853214",
+     "closed_calls": 47,
+     "wins": 22,
+     "losses": 19,
+     "win_rate_pct": 53.66,
+     "cumulative_r": 5.87,
+     "cumulative_move_pct": 60.07
+    },
+    {
+     "analyst": "Triggerxbt",
+     "slug": "discord-704407068278259783",
+     "closed_calls": 6,
+     "wins": 5,
+     "losses": 1,
+     "win_rate_pct": 83.33,
+     "cumulative_r": 5.83,
+     "cumulative_move_pct": 10.61
+    },
+    {
+     "analyst": "Natrix",
+     "slug": "discord-308183920015573004",
+     "closed_calls": 2,
+     "wins": 1,
+     "losses": 1,
+     "win_rate_pct": 50,
+     "cumulative_r": -0.17,
+     "cumulative_move_pct": 6.94
+    }
+   ],
+   "instruments": [
+    {
+     "symbol": "ADAUSDT",
+     "closed_calls": 4,
+     "cumulative_r": 14.87,
+     "cumulative_move_pct": 38.19
+    },
+    {
+     "symbol": "BROCCOLI714USDT",
+     "closed_calls": 1,
+     "cumulative_r": 6.7,
+     "cumulative_move_pct": 30.65
+    },
+    {
+     "symbol": "BTCUSDT",
+     "closed_calls": 18,
+     "cumulative_r": 5.52,
+     "cumulative_move_pct": 2.54
+    },
+    {
+     "symbol": "SOLUSDT",
+     "closed_calls": 8,
+     "cumulative_r": 5.42,
+     "cumulative_move_pct": 22.5
+    },
+    {
+     "symbol": "DOTUSDT",
+     "closed_calls": 6,
+     "cumulative_r": 4.95,
+     "cumulative_move_pct": 33.56
+    },
+    {
+     "symbol": "RAYDIUMUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 4.53,
+     "cumulative_move_pct": 19.57
+    },
+    {
+     "symbol": "XRPUSDT",
+     "closed_calls": 5,
+     "cumulative_r": 4.51,
+     "cumulative_move_pct": 21.4
+    },
+    {
+     "symbol": "LDOUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 4.47,
+     "cumulative_move_pct": 30.18
+    },
+    {
+     "symbol": "HYPEUSDT",
+     "closed_calls": 10,
+     "cumulative_r": 4.02,
+     "cumulative_move_pct": 21.48
+    },
+    {
+     "symbol": "RVNUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 2.97,
+     "cumulative_move_pct": 21.18
+    },
+    {
+     "symbol": "ZECUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 2.94,
+     "cumulative_move_pct": 32.41
+    },
+    {
+     "symbol": "ONDOUSDT",
+     "closed_calls": 6,
+     "cumulative_r": 2.76,
+     "cumulative_move_pct": 28.45
+    },
+    {
+     "symbol": "CLOUSDT",
+     "closed_calls": 4,
+     "cumulative_r": 2.72,
+     "cumulative_move_pct": 35.03
+    },
+    {
+     "symbol": "TAOUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 2.67,
+     "cumulative_move_pct": 23.36
+    },
+    {
+     "symbol": "SAFEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 2.61,
+     "cumulative_move_pct": 13.44
+    },
+    {
+     "symbol": "BICOUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 2.19,
+     "cumulative_move_pct": 9.57
+    },
+    {
+     "symbol": "PORTALUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 2.17,
+     "cumulative_move_pct": 11.15
+    },
+    {
+     "symbol": "PEOPLEUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.82,
+     "cumulative_move_pct": 7.06
+    },
+    {
+     "symbol": "HOLOUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.71,
+     "cumulative_move_pct": 8.66
+    },
+    {
+     "symbol": "FIGHTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.68,
+     "cumulative_move_pct": 9.44
+    },
+    {
+     "symbol": "HBARUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.68,
+     "cumulative_move_pct": 5.35
+    },
+    {
+     "symbol": "ZKUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.66,
+     "cumulative_move_pct": 12.9
+    },
+    {
+     "symbol": "TIAUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 1.59,
+     "cumulative_move_pct": 14.99
+    },
+    {
+     "symbol": "PYTHUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.55,
+     "cumulative_move_pct": 12.37
+    },
+    {
+     "symbol": "YGGUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.41,
+     "cumulative_move_pct": 5.14
+    },
+    {
+     "symbol": "BOTUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.39,
+     "cumulative_move_pct": 12.47
+    },
+    {
+     "symbol": "ARBUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.38,
+     "cumulative_move_pct": 11.01
+    },
+    {
+     "symbol": "NEIROUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.37,
+     "cumulative_move_pct": 10.96
+    },
+    {
+     "symbol": "ETCUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.31,
+     "cumulative_move_pct": 15.92
+    },
+    {
+     "symbol": "METAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.31,
+     "cumulative_move_pct": 4.53
+    },
+    {
+     "symbol": "INJUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.26,
+     "cumulative_move_pct": 5.06
+    },
+    {
+     "symbol": "USUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.25,
+     "cumulative_move_pct": 11.51
+    },
+    {
+     "symbol": "XLMUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 1.24,
+     "cumulative_move_pct": 9.05
+    },
+    {
+     "symbol": "VELODROMEUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 1.23,
+     "cumulative_move_pct": 14.04
+    },
+    {
+     "symbol": "LAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.21,
+     "cumulative_move_pct": 13.25
+    },
+    {
+     "symbol": "TNSRUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.11,
+     "cumulative_move_pct": 15.43
+    },
+    {
+     "symbol": "COTIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.1,
+     "cumulative_move_pct": 13.37
+    },
+    {
+     "symbol": "MANTRAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 1.03,
+     "cumulative_move_pct": 4.65
+    },
+    {
+     "symbol": "NEARUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 1.03,
+     "cumulative_move_pct": 10.93
+    },
+    {
+     "symbol": "FOGOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.93,
+     "cumulative_move_pct": 4.32
+    },
+    {
+     "symbol": "AVAXUSDT",
+     "closed_calls": 4,
+     "cumulative_r": 0.9,
+     "cumulative_move_pct": 14.13
+    },
+    {
+     "symbol": "XVSUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.84,
+     "cumulative_move_pct": 7.75
+    },
+    {
+     "symbol": "CASHCATUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.83,
+     "cumulative_move_pct": 10.64
+    },
+    {
+     "symbol": "AAVEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.83,
+     "cumulative_move_pct": 4.5
+    },
+    {
+     "symbol": "KGENUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 0.81,
+     "cumulative_move_pct": 6.21
+    },
+    {
+     "symbol": "BRETTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.78,
+     "cumulative_move_pct": 5.76
+    },
+    {
+     "symbol": "BANANAS31USDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.77,
+     "cumulative_move_pct": 7.39
+    },
+    {
+     "symbol": "MUBARAKUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.76,
+     "cumulative_move_pct": 3.67
+    },
+    {
+     "symbol": "WIFUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.76,
+     "cumulative_move_pct": 3.1
+    },
+    {
+     "symbol": "BREVUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.72,
+     "cumulative_move_pct": 5.99
+    },
+    {
+     "symbol": "AIGENSYNUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.72,
+     "cumulative_move_pct": 3.1
+    },
+    {
+     "symbol": "ICPUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.68,
+     "cumulative_move_pct": 4.74
+    },
+    {
+     "symbol": "KAVAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.68,
+     "cumulative_move_pct": 2.18
+    },
+    {
+     "symbol": "HUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.68,
+     "cumulative_move_pct": 3.41
+    },
+    {
+     "symbol": "DEXEUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 0.65,
+     "cumulative_move_pct": 5.96
+    },
+    {
+     "symbol": "ZKPUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.65,
+     "cumulative_move_pct": 4.27
+    },
+    {
+     "symbol": "EGLDUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.61,
+     "cumulative_move_pct": 5.65
+    },
+    {
+     "symbol": "XPLUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.55,
+     "cumulative_move_pct": 7.34
+    },
+    {
+     "symbol": "MMTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.5,
+     "cumulative_move_pct": 6.17
+    },
+    {
+     "symbol": "ONTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.5,
+     "cumulative_move_pct": 2.72
+    },
+    {
+     "symbol": "TRIAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.48,
+     "cumulative_move_pct": 5.57
+    },
+    {
+     "symbol": "ALGOUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 0.48,
+     "cumulative_move_pct": 0.22
+    },
+    {
+     "symbol": "PENDLEUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 0.48,
+     "cumulative_move_pct": 6.87
+    },
+    {
+     "symbol": "ATOMUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.47,
+     "cumulative_move_pct": 3.04
+    },
+    {
+     "symbol": "FARTCOINUSDT",
+     "closed_calls": 3,
+     "cumulative_r": 0.44,
+     "cumulative_move_pct": 0.48
+    },
+    {
+     "symbol": "ASTRUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.43,
+     "cumulative_move_pct": 3.67
+    },
+    {
+     "symbol": "WLFIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.42,
+     "cumulative_move_pct": 1.75
+    },
+    {
+     "symbol": "XAGUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.4,
+     "cumulative_move_pct": 7.77
+    },
+    {
+     "symbol": "LIGHTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.33,
+     "cumulative_move_pct": 1.81
+    },
+    {
+     "symbol": "GRIFFAINUSDT",
+     "closed_calls": 2,
+     "cumulative_r": 0.27,
+     "cumulative_move_pct": 2.32
+    },
+    {
+     "symbol": "RECALLUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.25,
+     "cumulative_move_pct": 2.05
+    },
+    {
+     "symbol": "OPNUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.25,
+     "cumulative_move_pct": 1.42
+    },
+    {
+     "symbol": "VVVUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.17,
+     "cumulative_move_pct": 1.96
+    },
+    {
+     "symbol": "TQQQUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.17,
+     "cumulative_move_pct": 0.49
+    },
+    {
+     "symbol": "ZBTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.12,
+     "cumulative_move_pct": 1.17
+    },
+    {
+     "symbol": "BLUAIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.11,
+     "cumulative_move_pct": 1.6
+    },
+    {
+     "symbol": "NOMUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.09,
+     "cumulative_move_pct": 1.97
+    },
+    {
+     "symbol": "MANAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0.03,
+     "cumulative_move_pct": 0.63
+    },
+    {
+     "symbol": "KASUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "INXUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "OGNUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "ETHFIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "ARPAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "BASUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "ONDSUSDT",
+     "closed_calls": 1,
+     "cumulative_r": 0,
+     "cumulative_move_pct": 0
+    },
+    {
+     "symbol": "RLCUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -0.01,
+     "cumulative_move_pct": 2.47
+    },
+    {
+     "symbol": "MEGAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.07,
+     "cumulative_move_pct": -0.63
+    },
+    {
+     "symbol": "BLURUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.09,
+     "cumulative_move_pct": -0.8
+    },
+    {
+     "symbol": "BSVUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.1,
+     "cumulative_move_pct": -0.8
+    },
+    {
+     "symbol": "VELVETUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.11,
+     "cumulative_move_pct": -1.26
+    },
+    {
+     "symbol": "EPICUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.12,
+     "cumulative_move_pct": -1.71
+    },
+    {
+     "symbol": "BANDUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.12,
+     "cumulative_move_pct": -0.72
+    },
+    {
+     "symbol": "ETHUSDT",
+     "closed_calls": 7,
+     "cumulative_r": -0.19,
+     "cumulative_move_pct": -33.31
+    },
+    {
+     "symbol": "DOGEUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.21,
+     "cumulative_move_pct": -0.81
+    },
+    {
+     "symbol": "BEATUSDT",
+     "closed_calls": 4,
+     "cumulative_r": -0.22,
+     "cumulative_move_pct": 8.77
+    },
+    {
+     "symbol": "1000LUNCUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.31,
+     "cumulative_move_pct": -1.93
+    },
+    {
+     "symbol": "ARKMUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -0.31,
+     "cumulative_move_pct": -2.44
+    },
+    {
+     "symbol": "CRVUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -0.45,
+     "cumulative_move_pct": -4.66
+    },
+    {
+     "symbol": "LTCUSDT",
+     "closed_calls": 4,
+     "cumulative_r": -0.5,
+     "cumulative_move_pct": -4.22
+    },
+    {
+     "symbol": "UNIUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -0.55,
+     "cumulative_move_pct": -2.59
+    },
+    {
+     "symbol": "TUTUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -0.57,
+     "cumulative_move_pct": -1.53
+    },
+    {
+     "symbol": "LABUSDT",
+     "closed_calls": 4,
+     "cumulative_r": -0.73,
+     "cumulative_move_pct": -0.34
+    },
+    {
+     "symbol": "SOSOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.17
+    },
+    {
+     "symbol": "CCUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -5.03
+    },
+    {
+     "symbol": "1000TURBOUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -5.31
+    },
+    {
+     "symbol": "HEIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -5.03
+    },
+    {
+     "symbol": "ICNTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -10.93
+    },
+    {
+     "symbol": "XTZUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -7.45
+    },
+    {
+     "symbol": "BSBUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -6.25
+    },
+    {
+     "symbol": "GRASSUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.44
+    },
+    {
+     "symbol": "ZAMAUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.63
+    },
+    {
+     "symbol": "SIRENUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -7.9
+    },
+    {
+     "symbol": "ZRXUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.5
+    },
+    {
+     "symbol": "BNBUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -0.71
+    },
+    {
+     "symbol": "PROMPTUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.06
+    },
+    {
+     "symbol": "POWERUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.25
+    },
+    {
+     "symbol": "SUIUSDT",
+     "closed_calls": 1,
+     "cumulative_r": -1,
+     "cumulative_move_pct": -3.7
+    },
+    {
+     "symbol": "POLUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -1.02,
+     "cumulative_move_pct": -8.82
+    },
+    {
+     "symbol": "LITUSDT",
+     "closed_calls": 3,
+     "cumulative_r": -1.19,
+     "cumulative_move_pct": -2.68
+    },
+    {
+     "symbol": "LINKUSDT",
+     "closed_calls": 3,
+     "cumulative_r": -1.29,
+     "cumulative_move_pct": 2.57
+    },
+    {
+     "symbol": "WLDUSDT",
+     "closed_calls": 2,
+     "cumulative_r": -2,
+     "cumulative_move_pct": -10.21
+    }
+   ],
+   "outcome_buckets": [
+    {
+     "label": "\u2264\u22122R",
+     "calls": 0
+    },
+    {
+     "label": "\u22121R",
+     "calls": 56
+    },
+    {
+     "label": "0R",
+     "calls": 77
+    },
+    {
+     "label": "+1R",
+     "calls": 66
+    },
+    {
+     "label": "+2R",
+     "calls": 15
+    },
+    {
+     "label": "+3R",
+     "calls": 5
+    },
+    {
+     "label": "\u2265+4R",
+     "calls": 9
+    }
+   ],
+   "outcome_buckets_pct": [
+    {
+     "label": "\u2264\u221210%",
+     "calls": 19
+    },
+    {
+     "label": "\u22125%",
+     "calls": 30
+    },
+    {
+     "label": "0%",
+     "calls": 80
+    },
+    {
+     "label": "+5%",
+     "calls": 55
+    },
+    {
+     "label": "+10%",
+     "calls": 21
+    },
+    {
+     "label": "+15%",
+     "calls": 12
+    },
+    {
+     "label": "\u2265+20%",
+     "calls": 12
+    }
+   ]
+  }
+ ],
+ "follower_assumptions": {
+  "maker_fee_bps": 2,
+  "taker_fee_bps": 5.5,
+  "market_slippage_bps": 2,
+  "stop_slippage_bps": 5,
+  "funding_applied": false,
+  "execution_delay_applied": false,
+  "execution_delay_seconds": null,
+  "policy_key": "axion-bybit-linear-v4",
+  "policy_version": 4,
+  "policy_hash": "c25615a2bb2cf3e3590165216539c05770c26a18926f19f4c3b5c738ba99f031",
+  "legs": [
+   {
+    "leg": "ENTRY",
+    "condition": "ENTRY_RESTS",
+    "applies_when": "a limit, range or DCA entry, which rests in the book",
+    "liquidity": "MAKER",
+    "fee_bps": 2,
+    "slippage_bps": 0
+   },
+   {
+    "leg": "ENTRY",
+    "condition": "ENTRY_AT_MARKET",
+    "applies_when": "a market or cmp entry, taken at whatever was there",
+    "liquidity": "TAKER",
+    "fee_bps": 5.5,
+    "slippage_bps": 2
+   },
+   {
+    "leg": "ENTRY",
+    "condition": "ENTRY_ON_STOP",
+    "applies_when": "a stop entry, which crosses the book when it triggers",
+    "liquidity": "TAKER",
+    "fee_bps": 5.5,
+    "slippage_bps": 5
+   },
+   {
+    "leg": "EXIT",
+    "condition": "EXIT_TARGET_REACHED",
+    "applies_when": "the exit is a published target, which rests in the book",
+    "liquidity": "MAKER",
+    "fee_bps": 2,
+    "slippage_bps": 0
+   },
+   {
+    "leg": "EXIT",
+    "condition": "EXIT_ON_STOP",
+    "applies_when": "the exit is a stop, break-even included",
+    "liquidity": "TAKER",
+    "fee_bps": 5.5,
+    "slippage_bps": 5
+   },
+   {
+    "leg": "EXIT",
+    "condition": "EXIT_MANUAL_CLOSE",
+    "applies_when": "the analyst closed or trimmed the position by hand",
+    "liquidity": "TAKER",
+    "fee_bps": 5.5,
+    "slippage_bps": 2
+   }
+  ]
+ }
+}
