@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""Check one Axion call against the transparency log and its anchors.
+"""Check one Axion call or one analyst message against the log and its anchors.
 
     python verify.py AXN-2026-09-01-00344
+    python verify.py AXM-2026-09-06-01281
     python verify.py AXN-2026-09-01-00344 --offline
     python verify.py --self-test
+
+An AXN- id checks the trade: every record of the chain, and the message record
+each one names, which a record has carried since schema axion-attestation/2. An
+AXM- id checks that message record on its own.
 
 Run inside a clone it reads the files on disk, anywhere else it fetches them
 from GitHub. The hashes and the chain need nothing but the files. Rekor and a
@@ -27,8 +32,19 @@ RAW = "https://raw.githubusercontent.com/" + REPO + "/main/"
 API = "https://api.github.com/repos/" + REPO + "/contents/"
 REKOR = "https://rekor.sigstore.dev/api/v1/"
 EXPLORERS = ("https://blockstream.info/api/", "https://mempool.space/api/")
-SCHEMA = "axion-attestation/1"
+TRADE_SCHEMAS = ("axion-attestation/1", "axion-attestation/2")
+SOURCE_SCHEMA = "axion-attestation-source/1"
 SIGNAL_ID = re.compile(r"^AXN-\d{4}-\d{2}-\d{2}-\d{5,}$")
+MESSAGE_REF = re.compile(r"^AXM-\d{4}-\d{2}-\d{2}-\d{5,}$")
+
+
+def is_message(subject_id):
+    return subject_id.startswith("AXM-")
+
+
+def schemas_for(subject_id):
+    """A message id carries the source schema, a trade id one of the other two."""
+    return (SOURCE_SCHEMA,) if is_message(subject_id) else TRADE_SCHEMAS
 
 
 # --- files -------------------------------------------------------------------
@@ -208,8 +224,8 @@ def rekor_key():
     return _rekor_key["pem"]
 
 
-def check_rekor(files, signal_id, number, raw, digest, online, report):
-    reference = files.read("proofs/%s/%d.rekor.json" % (signal_id, number))
+def check_rekor(files, subject_id, number, raw, digest, online, report):
+    reference = files.read("proofs/%s/%d.rekor.json" % (subject_id, number))
     if reference is None:
         report.line("rekor", "pending", "no entry reference published yet")
         return
@@ -395,8 +411,8 @@ def block_header(height):
     return None
 
 
-def check_bitcoin(files, signal_id, number, digest, online, report):
-    proof = files.read("proofs/%s/%d.ots" % (signal_id, number))
+def check_bitcoin(files, subject_id, number, digest, online, report):
+    proof = files.read("proofs/%s/%d.ots" % (subject_id, number))
     if proof is None:
         report.line("bitcoin", "pending", "no OpenTimestamps proof published yet")
         return
@@ -430,9 +446,10 @@ def check_bitcoin(files, signal_id, number, digest, online, report):
 # --- the log and the records -------------------------------------------------
 
 
-def find_envelopes(files, signal_id):
+def find_envelopes(files, subject_id):
     found = {}
-    needle = '"signal_id":"%s"' % signal_id
+    key = "message_ref" if is_message(subject_id) else "signal_id"
+    needle = '"%s":"%s"' % (key, subject_id)
     for day in files.log_days():
         data = files.read("log/" + day)
         if not data:
@@ -443,11 +460,11 @@ def find_envelopes(files, signal_id):
     return found
 
 
-def load_records(files, signal_id):
+def load_records(files, subject_id):
     records = {}
     number = 1
     while number < 10000:
-        raw = files.read("records/%s/%d.json" % (signal_id, number))
+        raw = files.read("records/%s/%d.json" % (subject_id, number))
         if raw is None:
             break
         records[number] = raw
@@ -465,13 +482,17 @@ class Report:
         print("  %-8s %-8s %s" % (label, status, detail))
 
 
-def check_record(document, raw, signal_id, number, report):
-    if document.get("schema") != SCHEMA:
-        report.line("hash", "FAIL", "schema %r is not one this script knows" % document.get("schema"))
+def check_record(document, raw, subject_id, number, report):
+    schema = document.get("schema")
+    if schema not in TRADE_SCHEMAS + (SOURCE_SCHEMA,):
+        report.line("hash", "FAIL", "schema %r is not one this script knows" % schema)
         return None
     problems = []
-    ids = (document.get("record_id"), document.get("signal_id"), document.get("record_number"))
-    if ids != ("%s/%d" % (signal_id, number), signal_id, str(number)):
+    if schema not in schemas_for(subject_id):
+        problems.append("schema %s does not belong under an %s- id" % (schema, subject_id[:3]))
+    own_id = "message_ref" if schema == SOURCE_SCHEMA else "signal_id"
+    ids = (document.get("record_id"), document.get(own_id), document.get("record_number"))
+    if ids != ("%s/%d" % (subject_id, number), subject_id, str(number)):
         problems.append("the ids inside the record do not match its path")
     if canonical(document) != raw:
         problems.append("the file is not in canonical form (hashing the bytes as published)")
@@ -497,6 +518,56 @@ def check_chain(document, number, digests, report):
         report.line("chain", "FAIL", "previous_record_hash is not the hash of record %d" % (number - 1))
 
 
+def envelope_fields(document):
+    """What the log line has to repeat from the record, per schema."""
+    common = {
+        "schema": document.get("schema"),
+        "record_number": document.get("record_number"),
+        "kind": document.get("kind"),
+        "posted_at": document.get("posted_at"),
+    }
+    if document.get("schema") == SOURCE_SCHEMA:
+        source = document.get("source") or {}
+        common.update(
+            {
+                "message_ref": document.get("message_ref"),
+                "analyst": source.get("analyst"),
+                "channel_id": source.get("channel_id"),
+                "message_id": source.get("message_id"),
+            }
+        )
+        return common
+    trade = document.get("trade") or {}
+    common.update(
+        {
+            "signal_id": document.get("signal_id"),
+            "instrument": trade.get("instrument"),
+            "side": trade.get("side"),
+            "analyst": trade.get("analyst"),
+        }
+    )
+    return common
+
+
+def check_source(files, document, report):
+    """A trade record names the message record it was built from. Follow it."""
+    if "source_record" not in document:
+        return None  # axion-attestation/1, which has no such key
+    link = document["source_record"]
+    if link is None:
+        report.line("source", "none", "this record names no source message")
+        return None
+    raw = files.read("records/%s.json" % link["record_id"])
+    if raw is None:
+        report.line("source", "FAIL", "%s is named but not published" % link["record_id"])
+        return None
+    if sha256(raw) != link["record_hash"]:
+        report.line("source", "FAIL", "%s does not hash to the value this record names" % link["record_id"])
+        return None
+    report.line("source", "ok", "%s, hashing to the value this record names" % link["record_id"])
+    return link["record_id"].rsplit("/", 1)[0]
+
+
 def check_envelope(envelope, document, digest, report):
     if envelope is None:
         report.line("log", "FAIL", "no line for this record in log/")
@@ -509,18 +580,7 @@ def check_envelope(envelope, document, digest, report):
     if env.get("record_hash") != digest:
         problems.append("record_hash differs from the record")
     if document is not None:
-        trade = document.get("trade") or {}
-        expected = {
-            "schema": document.get("schema"),
-            "signal_id": document.get("signal_id"),
-            "record_number": document.get("record_number"),
-            "kind": document.get("kind"),
-            "instrument": trade.get("instrument"),
-            "side": trade.get("side"),
-            "analyst": trade.get("analyst"),
-            "posted_at": document.get("posted_at"),
-        }
-        different = sorted(key for key, value in expected.items() if env.get(key) != value)
+        different = sorted(key for key, value in envelope_fields(document).items() if env.get(key) != value)
         if different:
             problems.append("differs from the record in " + ", ".join(different))
     if problems:
@@ -529,18 +589,24 @@ def check_envelope(envelope, document, digest, report):
         report.line("log", "ok", "log/%s line %d, committed %s" % (day, line_no, env.get("committed_at")))
 
 
-def check_call(signal_id, files, online):
-    report = Report()
-    records = load_records(files, signal_id)
-    envelopes = find_envelopes(files, signal_id)
+def check_records(subject_id, files, online, report):
+    """One chain, its log lines and its anchors. Names the messages it points at."""
+    records = load_records(files, subject_id)
+    envelopes = find_envelopes(files, subject_id)
     numbers = sorted(set(records) | {int(record_id.rsplit("/", 1)[1]) for record_id in envelopes})
     if not numbers:
-        print("%s: nothing is published under this id" % signal_id)
-        return 1
-    print("%s: %d record%s, %d revealed" % (signal_id, len(numbers), "" if len(numbers) == 1 else "s", len(records)))
+        print("%s: nothing is published under this id" % subject_id)
+        return None
+    plural = "" if len(numbers) == 1 else "s"
+    if is_message(subject_id):
+        # A source record holds no levels, so it is published as soon as it is built.
+        print("%s: %d message record%s" % (subject_id, len(numbers), plural))
+    else:
+        print("%s: %d record%s, %d revealed" % (subject_id, len(numbers), plural, len(records)))
+    linked = []
     digests = {}
     for number in numbers:
-        record_id = "%s/%d" % (signal_id, number)
+        record_id = "%s/%d" % (subject_id, number)
         raw = records.get(number)
         envelope = envelopes.get(record_id)
         document = None
@@ -551,31 +617,46 @@ def check_call(signal_id, files, online):
                 print(record_id)
                 report.line("hash", "FAIL", "the file is not JSON")
                 continue
-            print("%s  %s" % (record_id, document.get("kind")))
-            digest = check_record(document, raw, signal_id, number, report)
+            print("%s  %s  %s" % (record_id, document.get("kind"), document.get("schema")))
+            digest = check_record(document, raw, subject_id, number, report)
             if digest is None:
                 continue
             check_chain(document, number, digests, report)
+            message_ref = check_source(files, document, report)
+            if message_ref is not None and message_ref not in linked:
+                linked.append(message_ref)
         else:
             env = json.loads(envelope[2])
             digest = env["record_hash"]
-            print("%s  %s" % (record_id, env.get("kind")))
+            print("%s  %s  %s" % (record_id, env.get("kind"), env.get("schema")))
             report.line("hash", "hidden", "not revealed yet, checking the envelope's %s" % digest)
         digests[number] = digest
         check_envelope(envelope, document, digest, report)
         try:
-            check_rekor(files, signal_id, number, raw, digest, online, report)
+            check_rekor(files, subject_id, number, raw, digest, online, report)
         except (URLError, OSError) as error:
             report.line("rekor", "skipped", "network: %s" % error)
         try:
-            check_bitcoin(files, signal_id, number, digest, online, report)
+            check_bitcoin(files, subject_id, number, digest, online, report)
         except (URLError, OSError) as error:
             report.line("bitcoin", "skipped", "network: %s" % error)
+    return linked
+
+
+def check_id(subject_id, files, online):
+    report = Report()
+    linked = check_records(subject_id, files, online, report)
+    if linked is None:
+        return 1
+    for message_ref in linked:
+        print()
+        if check_records(message_ref, files, online, report) is None:
+            report.line("source", "FAIL", "%s is named by a record but is not published" % message_ref)
     print("%d checks failed" % report.failed if report.failed else "no check failed")
     return 1 if report.failed else 0
 
 
-# --- the worked example from Core's contract ---------------------------------
+# --- the worked examples from Core's contract --------------------------------
 
 WORKED_EXAMPLE = """
 {
@@ -679,39 +760,61 @@ WORKED_EXAMPLE = """
 """
 WORKED_EXAMPLE_HASH = "5a5387f6af5285a887e093b36cb6f4c9670d5d10c85ae16375c8377161b2640c"
 
+# The message that call was posted in, and the same call once its message had a
+# record. Both as the contract prints them, which is the canonical bytes exactly.
+WORKED_SOURCE = """{"kind":"source_message","message_ref":"AXM-2026-08-20-00019","observed_at":"2026-08-20T10:52:31.402118Z","posted_at":"2026-08-20T10:52:29.649000Z","previous_record_hash":null,"record_id":"AXM-2026-08-20-00019/1","record_number":"1","salt":"9c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f60718293a4b5c6d7e8f9a0b1c2d3e4f5","schema":"axion-attestation-source/1","source":{"analyst":"discord-947954207493853214","analyst_id":"947954207493853214","attachments":[{"attachment_id":"1539950246015008789","sha256":null,"size":"19464"}],"channel_id":"1076832098452770876","content_hash":"0e2bfbc9c3e22fd1211f9bd86ad09c58d80f551043a000d3a62104043c6f693f","guild_id":"1076832098452770876","hash_recipe":"axionsignal-msg/1","message_id":"1539950246463803445","revision":"0","system":"AXIONSIGNAL_V2"}}"""
+WORKED_SOURCE_HASH = "5e19b17a586853442390fc1d12882b0ef314cc90f205f140b52e2193e3582705"
+
+WORKED_SCHEMA_2 = """{"corrected_kind":null,"event":{"effective_at":"2026-08-20T10:52:29.000000Z","id":"asv2:3f2a9c8b7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f2a","observed_at":"2026-08-20T10:53:04.000000Z","origin":"ANALYST_REPORTED","recorded_at":"2026-08-20T10:53:04.118406Z","semantic":"INSTRUCTION","type":"TRADE_OPENED"},"kind":"opening","levels":{"announced_dca_slots":"0","auto_sl_be_override":null,"entries":[{"allocation_pct":"50","entry_id":"CMP","match_current_position_quantity":false,"price":null,"price_high":null,"price_low":null,"trigger_price_type":"LAST","type":"MARKET"},{"allocation_pct":"50","entry_id":"DCA 1","match_current_position_quantity":false,"price":"116500","price_high":null,"price_low":null,"trigger_price_type":"LAST","type":"DCA"}],"label":null,"leverage":"10","quantity_basis":null,"quantity_pct":null,"reference_price":null,"semantic_kind":"INSTRUCTION","stop":{"at_break_even":false,"candle_interval_minutes":null,"condition_operator":null,"price":"118200","trigger_mode":"PRICE_TOUCH","trigger_price_type":"LAST"},"stop_deferral":null,"targets":[{"close_pct":"50","is_runner":false,"price":"114000","quantity_basis":"ORIGINAL","target_id":"TP1","trigger_price_type":"LAST"},{"close_pct":"50","is_runner":false,"price":"112000","quantity_basis":"ORIGINAL","target_id":"TP2","trigger_price_type":"LAST"}]},"posted_at":"2026-08-20T10:52:29.000000Z","previous_record_hash":null,"record_id":"AXN-2026-08-20-00345/1","record_number":"1","restates":null,"result":null,"salt":"5f1b9c6e2d3a4b7c8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d","schema":"axion-attestation/2","signal_id":"AXN-2026-08-20-00345","source":{"analyst_id":"947954207493853214","channel_id":"1076832098452770876","content_hash":"0e2bfbc9c3e22fd1211f9bd86ad09c58d80f551043a000d3a62104043c6f693f","event_key":"1539950246463803445:11a0e6b9dd6e:0","guild_id":"1076832098452770876","message_id":"1539950246463803445","revision":"0","system":"AXIONSIGNAL_V2"},"source_record":{"record_hash":"5e19b17a586853442390fc1d12882b0ef314cc90f205f140b52e2193e3582705","record_id":"AXM-2026-08-20-00019/1"},"supersedes":null,"trade":{"analyst":"discord-947954207493853214","instrument":"BTCUSDT","provider":"axion","side":"SHORT"}}"""
+WORKED_SCHEMA_2_HASH = "5eabc1cd7ae52efe194faf97d1dfe1ab504622fba6796d80b1ab108af35dd6ae"
+
 
 def self_test():
-    document = json.loads(WORKED_EXAMPLE)
-    data = canonical(document)
-    digest = sha256(data)
-    print("AXN-2026-08-20-00345/1, the worked example in Core's attestation contract")
-    print("  %d canonical bytes, sha256 %s" % (len(data), digest))
-    if digest == WORKED_EXAMPLE_HASH:
-        print("  matches the hash the contract gives")
-        return 0
-    print("  DOES NOT MATCH %s" % WORKED_EXAMPLE_HASH)
-    return 1
+    examples = (
+        ("AXN-2026-08-20-00345/1, the worked example in Core's attestation contract", WORKED_EXAMPLE, WORKED_EXAMPLE_HASH),
+        ("AXM-2026-08-20-00019/1, the message that call was posted in", WORKED_SOURCE, WORKED_SOURCE_HASH),
+        ("AXN-2026-08-20-00345/1 again, under axion-attestation/2", WORKED_SCHEMA_2, WORKED_SCHEMA_2_HASH),
+    )
+    failed = 0
+    for title, example, expected in examples:
+        data = canonical(json.loads(example))
+        digest = sha256(data)
+        print(title)
+        print("  %d canonical bytes, sha256 %s" % (len(data), digest))
+        if digest == expected:
+            print("  matches the hash the contract gives")
+        else:
+            print("  DOES NOT MATCH %s" % expected)
+            failed += 1
+    link = json.loads(WORKED_SCHEMA_2)["source_record"]
+    print("the schema 2 record names %s" % link["record_id"])
+    if link["record_hash"] == WORKED_SOURCE_HASH:
+        print("  which is the message record above")
+    else:
+        print("  WHICH IS NOT the message record above")
+        failed += 1
+    return 1 if failed else 0
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Check one Axion call against the log and its anchors.")
-    parser.add_argument("signal_id", nargs="?", help="for example AXN-2026-09-01-00344")
+    parser = argparse.ArgumentParser(description="Check one Axion call or message against the log and its anchors.")
+    parser.add_argument("subject", nargs="?", help="for example AXN-2026-09-01-00344 or AXM-2026-09-06-01281")
     parser.add_argument(
         "--repo", help="a clone to read instead of GitHub (default: this script's directory when it holds records/)"
     )
     parser.add_argument("--offline", action="store_true", help="no network at all; anchors are read from the proof files")
-    parser.add_argument("--self-test", action="store_true", help="recompute the worked example's hash")
+    parser.add_argument("--self-test", action="store_true", help="recompute the hashes of the worked examples")
     args = parser.parse_args()
     if args.self_test:
         return self_test()
-    if not args.signal_id or not SIGNAL_ID.match(args.signal_id):
-        parser.error("give a signal id like AXN-2026-09-01-00344")
+    if not args.subject or not (SIGNAL_ID.match(args.subject) or MESSAGE_REF.match(args.subject)):
+        parser.error("give a signal id like AXN-2026-09-01-00344 or a message id like AXM-2026-09-06-01281")
     here = os.path.dirname(os.path.abspath(__file__))
     root = args.repo or (here if os.path.isdir(os.path.join(here, "records")) else None)
     if root is None and args.offline:
         parser.error("--offline needs a clone; pass --repo or run from inside one")
     try:
-        return check_call(args.signal_id, Files(root), online=not args.offline)
+        return check_id(args.subject, Files(root), online=not args.offline)
     except (URLError, OSError) as error:
         print("could not reach the network: %s" % error)
         return 1
