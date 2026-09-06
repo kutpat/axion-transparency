@@ -1,6 +1,6 @@
 # Checking a record
 
-Everything Axion publishes about a call can be checked without asking Axion. This page says how. The field by field format is in [schema.md](schema.md), and `python verify.py <signal id>` runs every check below for one call.
+Everything Axion publishes about a call can be checked without asking Axion. This page says how. The field by field format is in [schema.md](schema.md), and `python verify.py <signal id>` runs every check below for one call. `python verify.py <message id>` does the same for one analyst message.
 
 ## What is published
 
@@ -14,11 +14,17 @@ Every call has a permanent id, `AXN-YYYY-MM-DD-NNNNN`, and a chain of numbered r
 
 An anchor dates the record, not the analyst's message. `committed_at` in the envelope is when Core built the record and `posted_at` inside the record is the Discord message time; both are published, so the gap can be read. For the history backfilled on 2026-09-05 the gap is weeks or months.
 
+Every message in a tracked source channel has an id of its own, `AXM-YYYY-MM-DD-NNNNN`, and a chain of its own, hashed and anchored the same way within seconds of the message arriving, and the ones already stored when the chain started are part of that same backfill. A trade record built since Core v1.13.0 is schema `axion-attestation/2`, the same document with one key more, `source_record`, which names the message record the trade came from, so the chain runs from the raw message through to the close.
+
 ## Envelope now, record at close
 
 While a call is open only the envelope is public: one line in `log/<UTC day of committed_at>.jsonl` carrying `schema`, `record_id`, `signal_id`, `record_number`, `kind`, `instrument`, `side`, `analyst`, `posted_at`, `committed_at` and `record_hash`. Lines are appended and never edited. The record carries a random 32-byte salt, so the levels cannot be guessed back from the hash.
 
 A call is revealed when the official portfolio finalises it, when its status is terminal, when it is a re-post of a revealed call, or when its opening is more than 90 days old. The reveal publishes `records/<id>/<n>.json` for every record: the exact bytes that were hashed, salt included. A reveal is never undone, and a record built afterwards is published in full together with its log line.
+
+A message record has no reveal condition. It holds no levels and no text, so it lands in `records/<message id>/<n>.json` in the same commit as its log line, salt included, and a member who can see the message can check it while the call is still open. Its line is a different shape, carrying `message_ref`, `channel_id` and `message_id` where a call's carries `signal_id`, `instrument` and `side`, and `schema` is what tells the two apart.
+
+`source.content_hash` in a message record is AxionSignal's hash of the message itself, taken on arrival, and `source.hash_recipe` names the rule it was taken under, `axionsignal-msg/1` or `axionsignal-msg/2`, a null meaning the first. Recomputing it over a message you can see is what ties a record to that message; the recipe is in Core's attestation contract, sections 3.5 to 3.7, and AxionSignal's `docs/message-hash-recipe.md` is its authority.
 
 ## The bytes that are hashed
 
@@ -73,4 +79,4 @@ The first form works while the call is open, the second after the reveal. `ots v
 
 ## Versions
 
-`schema` names the format. Any change to a key or a rule is a new string, and a verifier refuses one it does not know. Records, hashes, salts and anchors are never rewritten; a mistake is a new record. A new signing key is a new file in `keys/` and a new `key_id` in the Rekor references.
+`schema` names the format. Any change to a key or a rule is a new string, and a verifier refuses one it does not know. There are three: `axion-attestation/1` and `axion-attestation/2` for a call's records, differing only by `source_record`, and `axion-attestation-source/1` for a message record. A chain can hold more than one of them, and every chain that predates message anchoring does. Records, hashes, salts and anchors are never rewritten; a mistake is a new record. A new signing key is a new file in `keys/` and a new `key_id` in the Rekor references.
