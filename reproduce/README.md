@@ -8,7 +8,7 @@ Standard library only. The arithmetic is in Decimal, and the only rounding is th
 
 ## Where the published figures come from
 
-Trading Core's API is private, so the comparison target is what the website serves. The page at `/performance` is rendered on the server with its figures in the markup, and the script reads them from there. A JSON route beside the CSV, `/performance/figures.json`, is coming; the script asks for it first and reads the page until it answers.
+Trading Core's API is private, so the comparison target is what the website serves. `/performance/figures.json` is the figures as a document, schema `axion-performance-figures/1`, with the three windows under `windows` and each window's series under `daily`. The script asks for it first. When it does not answer JSON the script reads the page at `/performance` instead, which is rendered on the server and carries the same figures in its payload under `ranges` and `dailyR`. A schema name the script does not know is refused; a shape naming no schema is the page's own payload.
 
 ## The windows
 
@@ -37,12 +37,16 @@ Each row's R is also recomputed as exit minus entry, divided by entry minus stop
     follower R    = R minus cost per unit / |entry minus stop|
     follower %    = move % minus cost per unit / entry * 100
 
-The entry leg is maker for a limit, range or DCA entry and taker with slippage for a market, cmp or stop entry; the exit leg is maker for a reached target and taker with slippage for a stop or a manual close. No funding and no execution delay. The per-row `entry_bps`, `exit_bps` and `cost_r` are not in the CSV yet, so the column cannot be rebuilt from first principles here and its aggregates are summed from the column. Those three columns are being added; the script will check each row once they are there.
+The entry leg is maker for a limit, range or DCA entry and taker with slippage for a market, cmp or stop entry; the exit leg is maker for a reached target and taker with slippage for a stop or a manual close. No funding and no execution delay.
 
-## The pinned day
+The CSV carries `entry_bps`, `exit_bps` and `cost_r` per row, so every row is rebuilt rather than trusted. A row's two bps figures have to be the fee plus the slippage of one of the legs the assumption table publishes, and the three results are printed against the row's own columns. `cost_r` is the difference of the two rounded figures and not the ratio rounded, which is how the page makes the three reconcile. The window's follower totals are then summed from the rebuilt rows. A CSV without those three columns, the one pinned for 2026-09-05 included, sums the column as published and says so.
 
-`ledger-2026-09-05.csv` and `figures-2026-09-05.json` are what the site served on 2026-09-05, and `test_reproduce.py` checks that every figure of that day still reproduces:
+## The pinned days
+
+`ledger-<day>.csv` and `figures-<day>.json` are what the site served that day, and `test_reproduce.py` checks that every figure of both days still reproduces:
 
     python -m unittest test_reproduce
 
-On that day all 306 comparisons matched. Of the 228 rows with an R, one (AXN-2026-08-17-00269) recomputes 0.01 away from its column and 18 recompute a percent 0.01 to 0.03 away, all from the tick rounding of the entry.
+On each day all 306 comparisons matched. Of the 228 rows with an R, one (AXN-2026-08-17-00269) recomputes 0.01 away from its column and 18 recompute a percent 0.01 to 0.03 away, all from the tick rounding of the entry.
+
+2026-09-05 is the older shape: the figures off the page's payload, and a CSV with no per-row bps. 2026-09-06 is the JSON route and a CSV that carries them, and on that day all 228 follower rows rebuilt to the figure their column already held.

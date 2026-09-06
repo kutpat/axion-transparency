@@ -26,6 +26,7 @@ SITE = "https://axioncrypto.net"
 CSV_URL = SITE + "/performance/ledger.csv"
 FIGURES_URL = SITE + "/performance/figures.json"
 PAGE_URL = SITE + "/performance"
+FIGURES_SCHEMA = "axion-performance-figures/1"
 WINDOWS = (7, 30, 90)
 CENT = Decimal("0.01")
 ONE = Decimal("1")
@@ -94,6 +95,9 @@ def read_rows(text):
                 "move_pct": decimal(record["move_pct"]),
                 "follower_r": decimal(record.get("follower_r")),
                 "follower_move_pct": decimal(record.get("follower_move_pct")),
+                "cost_r": decimal(record.get("cost_r")),
+                "entry_bps": decimal(record.get("entry_bps")),
+                "exit_bps": decimal(record.get("exit_bps")),
             }
         )
     return rows
@@ -109,12 +113,32 @@ def snake(obj):
 
 
 def normalise(figures):
-    if "performance" in figures and "ranges" not in figures:
+    """Both shapes the site serves, in one form: windows, each with a daily series.
+
+    /performance/figures.json is schema axion-performance-figures/1: snake_case,
+    with windows[] and daily[]. The page carries the same figures in its own
+    payload under ranges[] and dailyR[] and names no schema, and that is what the
+    fallback reads when the route does not answer. Only a schema name this script
+    does not know is refused.
+    """
+    if "performance" in figures and "ranges" not in figures and "windows" not in figures:
         figures = figures["performance"]
     figures = snake(figures)
-    if "ranges" not in figures:
-        raise SystemExit("the figures carry no ranges; the shape is not one this script knows")
+    schema = figures.get("schema")
+    if schema is not None and schema != FIGURES_SCHEMA:
+        raise SystemExit("the figures are schema %r, which is not one this script knows" % schema)
+    windows = figures.get("windows") or figures.get("ranges")
+    if not windows:
+        raise SystemExit("the figures carry no windows; the shape is not one this script knows")
+    figures["windows"] = [with_daily(window) for window in windows]
     return figures
+
+
+def with_daily(window):
+    """One window, its daily series under one name whichever shape named it."""
+    window = dict(window)
+    window["daily"] = window.get("daily") or window.get("daily_r") or []
+    return window
 
 
 def figures_from_page(html):
@@ -267,7 +291,7 @@ def compute(rows, window_days, now):
         "average_follower_move_pct": (
             rounded(sum(follower_pct, Decimal(0)) / len(follower_pct)) if follower_pct else None
         ),
-        "daily_r": series,
+        "daily": series,
         "outcome_buckets": [buckets.get(key, 0) for key in BUCKETS_R],
         "outcome_buckets_pct": [buckets_pct.get(key, 0) for key in BUCKETS_PCT],
         "analysts": sorted(
@@ -318,6 +342,58 @@ def check_rows(rows):
     return checks
 
 
+def leg_costs(assumptions):
+    """What each published leg costs in bps, by leg and by that total."""
+    legs = {}
+    for leg in (assumptions or {}).get("legs", []):
+        total = num(leg["fee_bps"]) + num(leg["slippage_bps"])
+        legs.setdefault(leg["leg"], {}).setdefault(total, leg["condition"])
+    return legs
+
+
+def check_follower(rows, assumptions):
+    """Rebuild every row's follower figures from its prices and the published legs.
+
+        cost per unit = entry * entry bps / 10000 + exit * exit bps / 10000
+        follower R    = R minus cost per unit / |entry minus stop|
+        follower %    = move % minus cost per unit / entry * 100
+        cost R        = R minus follower R, both already rounded
+
+    A row's entry_bps and exit_bps must be the fee plus the slippage of one of
+    the legs the assumption table publishes; a row whose bps name no leg is
+    reported. The rebuilt figures then replace the row's follower columns, so
+    the window totals are summed from this arithmetic and not from the column,
+    and column_follower_r keeps what the CSV said so the two can be compared.
+    """
+    legs = leg_costs(assumptions)
+    checks = []
+    for row in rows:
+        if row["r"] is None or row["entry_bps"] is None or row["exit_bps"] is None:
+            continue
+        check = {
+            "row": row,
+            "entry_leg": legs.get("ENTRY", {}).get(row["entry_bps"]),
+            "exit_leg": legs.get("EXIT", {}).get(row["exit_bps"]),
+            "follower_r": None,
+            "follower_move_pct": None,
+            "cost_r": None,
+        }
+        if None not in (row["entry"], row["stop"], row["exit"]) and row["entry"] != row["stop"]:
+            cost = row["entry"] * row["entry_bps"] / 10000 + row["exit"] * row["exit_bps"] / 10000
+            check["follower_r"] = rounded(row["r"] - cost / abs(row["entry"] - row["stop"]))
+            check["cost_r"] = rounded(row["r"] - check["follower_r"])
+            if row["move_pct"] is not None:
+                check["follower_move_pct"] = rounded(row["move_pct"] - cost / row["entry"] * 100)
+        checks.append(check)
+        row.setdefault("column_follower_r", row["follower_r"])
+        row.setdefault("column_follower_move_pct", row["follower_move_pct"])
+        if check["follower_r"] is not None:
+            row["follower_r"] = check["follower_r"]
+        if check["follower_move_pct"] is not None:
+            row["follower_move_pct"] = check["follower_move_pct"]
+    return checks
+
+
 # --- comparing ---------------------------------------------------------------
 
 
@@ -351,7 +427,7 @@ def compare(rows, figures):
     """Every published figure beside its recomputation, as a flat list."""
     now = parse_time(figures["generated_at"])
     results = []
-    for published in figures["ranges"]:
+    for published in figures["windows"]:
         days = int(published["window_days"])
         ours = compute(rows, days, now)
         results.append(Result(days, "window start", ours["window_start"], parse_time(published["window_start"])))
@@ -364,9 +440,9 @@ def compare(rows, figures):
 
         theirs = [
             (parse_time(point["day"]), num(point["r"]), num(point.get("pct", 0)), int(point["closed_calls"]))
-            for point in published["daily_r"]
+            for point in published["daily"]
         ]
-        mine = [(point["day"], point["r"], point["pct"], point["closed_calls"]) for point in ours["daily_r"]]
+        mine = [(point["day"], point["r"], point["pct"], point["closed_calls"]) for point in ours["daily"]]
         results.append(Result(days, "daily series (%d days)" % len(theirs), mine, theirs))
 
         for key, label in (("outcome_buckets", "outcome buckets R"), ("outcome_buckets_pct", "outcome buckets %")):
@@ -538,7 +614,60 @@ def print_assumptions(figures):
             % (leg["leg"], leg["condition"], leg["liquidity"], leg["fee_bps"], leg["slippage_bps"], leg["applies_when"])
         )
     print("  follower R = R minus (entry * entry bps + exit * exit bps) / 10000 / |entry minus stop|")
-    print("  The per-row bps are not in the CSV yet, so the follower column is summed here, not rebuilt.")
+
+
+def print_follower_checks(checks):
+    print()
+    print("follower R and follower percent rebuilt from each row's prices and bps")
+    if not checks:
+        print("  no row carries entry_bps and exit_bps, so the follower columns are summed as published")
+        return
+    rebuilt = [check for check in checks if check["follower_r"] is not None]
+    unknown = [check for check in checks if check["entry_leg"] is None or check["exit_leg"] is None]
+    differing = [
+        check
+        for check in rebuilt
+        if check["follower_r"] != check["row"]["column_follower_r"]
+        or check["follower_move_pct"] != check["row"]["column_follower_move_pct"]
+        or check["cost_r"] != check["row"]["cost_r"]
+    ]
+    print(
+        "  %d of %d rows rebuilt, %d differ from the column; the follower totals above are summed from the rebuilt rows"
+        % (len(rebuilt), len(checks), len(differing))
+    )
+    if unknown:
+        print("  %d rows carry bps that are no published leg" % len(unknown))
+        for check in unknown[:20]:
+            print(
+                "    %-22s entry %s bps %s, exit %s bps %s"
+                % (
+                    check["row"]["signal_id"],
+                    show(check["row"]["entry_bps"]),
+                    check["entry_leg"] or "no leg",
+                    show(check["row"]["exit_bps"]),
+                    check["exit_leg"] or "no leg",
+                )
+            )
+    if differing:
+        print(
+            "  %-22s %-14s %9s %9s %9s %9s %9s %9s"
+            % ("signal", "symbol", "R calc", "R col", "% calc", "% col", "cost calc", "cost col")
+        )
+    for check in differing:
+        row = check["row"]
+        print(
+            "  %-22s %-14s %9s %9s %9s %9s %9s %9s"
+            % (
+                row["signal_id"],
+                row["symbol"],
+                show(check["follower_r"]),
+                show(row["column_follower_r"]),
+                show(check["follower_move_pct"]),
+                show(row["column_follower_move_pct"]),
+                show(check["cost_r"]),
+                show(row["cost_r"]),
+            )
+        )
 
 
 def main():
@@ -575,22 +704,29 @@ def main():
 
     rows = read_rows(text)
     figures = normalise(raw_figures)
+    follower = check_follower(rows, figures.get("follower_assumptions"))
     print("ledger: %s, %d rows" % (csv_source, len(rows)))
     if rows:
         print("  closed between %s and %s" % (show(min(r["closed_at"] for r in rows)), show(max(r["closed_at"] for r in rows))))
     print(
-        "figures: %s, generated %s, calculation version %s"
-        % (figures_source, figures.get("generated_at"), figures.get("calculation_version"))
+        "figures: %s, %s, generated %s, calculation version %s"
+        % (
+            figures_source,
+            figures.get("schema") or "the page's own payload, which names no schema",
+            figures.get("generated_at"),
+            figures.get("calculation_version"),
+        )
     )
+    print("  portfolio %s, %s calls open" % (figures.get("portfolio_name"), figures.get("open_calls")))
     if figures_source == PAGE_URL:
-        print("  read from the page's payload; a JSON route beside the CSV is coming and will be used when it answers")
+        print("  read from the page because %s did not answer with JSON" % FIGURES_URL)
     print("windows are cut at the figures' generation time minus 7, 30 and 90 days, closed_at strictly after the cut")
 
     results = compare(rows, figures)
     print_results(results)
-    checks = check_rows(rows)
-    print_row_checks(checks)
+    print_row_checks(check_rows(rows))
     print_assumptions(figures)
+    print_follower_checks(follower)
 
     differing = [result for result in results if not result.ok]
     print()
