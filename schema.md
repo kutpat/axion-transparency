@@ -10,7 +10,7 @@ A message is `AXM-YYYY-MM-DD-NNNNN`: the UTC day it was posted, read off its own
 
 ## Records
 
-One record per canonical event of the trade (corrections included), one `result` when the official portfolio finalises it, one `withdrawal` when a trade is a re-post of an earlier one. Kinds: `opening`, `plan`, `restatement`, `entry_added`, `entry_filled`, `entry_missed`, `entry_cancelled`, `average_entry`, `stop_move`, `stop_deferred`, `targets_set`, `target_added`, `target_reached`, `size_increased`, `partial`, `close`, `stopped`, `cancel`, `leverage`, `retraction`, `note`, `correction`, `result`, `withdrawal`.
+One record per canonical event of the trade (corrections included), one `result` when the official portfolio finalises it, one `withdrawal` when a trade is a re-post of an earlier one. Kinds: `opening`, `plan`, `restatement`, `entry_added`, `entry_filled`, `entry_missed`, `entry_cancelled`, `average_entry`, `stop_move`, `stop_deferred`, `targets_set`, `target_added`, `target_reached`, `size_increased`, `partial`, `close`, `stopped`, `cancel`, `cancel_if_unfilled`, `ended_unresolved`, `leverage`, `retraction`, `note`, `correction`, `result`, `withdrawal`.
 
 Every key is always present; an absent value is `null`.
 
