@@ -1,0 +1,39 @@
+{
+  "body": "eyJhcGlWZXJzaW9uIjoiMC4wLjEiLCJraW5kIjoiaGFzaGVkcmVrb3JkIiwic3BlYyI6eyJkYXRhIjp7Imhhc2giOnsiYWxnb3JpdGhtIjoic2hhMjU2IiwidmFsdWUiOiIzMTQ4MWI1MTY5MDRmMjcyZTMwNGQwYzJlZTYyMDNmMmU5MjU3MzkzY2Y0MDU0M2ExYmIzODU1OTJjMGQzZWM3In19LCJzaWduYXR1cmUiOnsiY29udGVudCI6Ik1FWUNJUUQ0eXdFbE1BZDNpOGhLV0pMMm4yd1B6Nm5DY2x6YVZOd0c0NitERDNXVS9BSWhBTGNmQm0zK2JoUUFjY0d1NkQyeHM2QWJZRXE1ZndxTHkxdDM5Vll3OXovLyIsInB1YmxpY0tleSI6eyJjb250ZW50IjoiTFMwdExTMUNSVWRKVGlCUVZVSk1TVU1nUzBWWkxTMHRMUzBLVFVacmQwVjNXVWhMYjFwSmVtb3dRMEZSV1VsTGIxcEplbW93UkVGUlkwUlJaMEZGZFhseVpTOHlVVWxzY1VOd04yNDFkSFppZG1wSVJERnBWbUU0VVFweE5GcDVha0Z2U0Vobk9TdGFNRWRVWnk5dE16TkhTak5zZDNSNWFHTnhkSEF4YzB0MWFUbHFlV05STjJ0VGQyeGlNemxCYkV0TmRYbDNQVDBLTFMwdExTMUZUa1FnVUZWQ1RFbERJRXRGV1MwdExTMHRDZz09In19fX0=",
+  "entry_uuid": "108e9186e8c5677a48730283f8ad82f61f82de2cfb6baaed63d8ba8019dfd5ff741b2eb1e8549b78",
+  "integrated_time": 1790756180,
+  "key_id": "axion-2026-09",
+  "log_id": "c0d23d6ad406973f9559f3ba2d1ca01f84147d8ffc5b8445c224f98b9591801d",
+  "log_index": 3014863223,
+  "public_key_pem": "-----BEGIN PUBLIC KEY-----\nMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEuyre/2QIlqCp7n5tvbvjHD1iVa8Q\nq4ZyjAoHHg9+Z0GTg/m33GJ3lwtyhcqtp1sKui9jycQ7kSwlb39AlKMuyw==\n-----END PUBLIC KEY-----\n",
+  "verification": {
+    "inclusionProof": {
+      "checkpoint": "rekor.sigstore.dev - 1193050959916656506\n2892958967\nCgsR8TUCzkbfga1aqzb6gQilth2IipFwhjGkR/Ynhf0=\n\n\u2014 rekor.sigstore.dev wNI9ajBFAiAZOzBwByFznZeTAEplVBVCmXlCFipkbUO0wNe8GRO6MwIhAPEzjnWWirxJxER5f4i8hEtnsY06UNEtI7sL6T2hHO3F\n",
+      "hashes": [
+        "7ef1608091ffdf21a5fef0e881b9210770453db0d96689fae2914dfde379a4a6",
+        "23bad1a014810cf7d69bdc7ece04588b57b9148f013badbe254cf655e48535da",
+        "1267e256d7b9aa1fdc02e3cd331f1dd0150775e888da05171f066074f4ef1cd6",
+        "908ca585363b4baef590831da4a0ef26f6c0d9e1871a46aaf0feb903558d752c",
+        "d477d8a4d22f3baec32fe3404b900a5c4a3bf5407d526b32b92049555b3a7a4c",
+        "78aa186c7ec095911479fdd485cc324626b86cb9e179c8d3e7a6e88d4bb0ac81",
+        "2c4e9a8e9f0b38ef3e54b73efaf46a88c73076d10a508587ac96672d64fda152",
+        "7cab9d01347c792e2f226d0dfe1f856a6a6bf283cd272d2079dc44bf73bb4411",
+        "22fb2a1016beb9659769c06a0483c3bb85b96c47ed459d84de95b2ae4bad5ce2",
+        "7f09900b660d46d80a6738f826ec9683a43c4f5c74ef2a42223ffcdaf8f77c8e",
+        "5b9f164ea42b9ae7ee45b953e0c49d1ba65fb2882bd8e14cf24523e0140a2268",
+        "2c346eb3746b0f762396f3dec60b9acebaca458ea7459e2b90cc5bfc5870a43a",
+        "3bd358ba4cf82f1bb21d8a9ad748a356ad3d8005cd65889f722d8254b05bde45",
+        "c975b536d097a57737de5e6c3e2830c51cbeab0b7b06c6567e97c782675663bf",
+        "fd3cfcbe1e6c07ce42c82ba76ea1742dbbd7b36a8a8796496d895db7ddc6ca35",
+        "e25624edc5fc3eccd92e8c903168cc0c1d413819f87fb85e86d1621e8f767b96",
+        "b6da717744c9a6b394b5bffc59fe43788cf036d530ef64346275c4d8b14c219a",
+        "ab1cc76a7033cf9ed20dd9897b407b6c92bbd8d4c805bc043060412af0ce44ec",
+        "c47fc30ac78b1ebf5e2a8613f2ab0e4592bbcd5744198587b95b6c56b0fde706"
+      ],
+      "logIndex": 2892958961,
+      "rootHash": "0a0b11f13502ce46df81ad5aab36fa8108a5b61d888a91708631a447f62785fd",
+      "treeSize": 2892958967
+    },
+    "signedEntryTimestamp": "MEYCIQDByePza+mN+UYf+t4Sj20w/jnD5dzoc3V7ZoZjjLnlTAIhAKPmJckErmdQC2untc1YNjpj1+jR98tq/fRn3RnEuNlq"
+  }
+}
