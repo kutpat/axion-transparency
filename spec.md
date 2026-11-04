@@ -20,7 +20,7 @@ Every message in a tracked source channel has an id of its own, `AXM-YYYY-MM-DD-
 
 While a call is open only the envelope is public: one line in `log/<UTC day of committed_at>.jsonl` carrying `schema`, `record_id`, `signal_id`, `record_number`, `kind`, `instrument`, `side`, `analyst`, `posted_at`, `committed_at` and `record_hash`. Lines are appended and never edited. The record carries a random 32-byte salt, so the levels cannot be guessed back from the hash.
 
-A call is revealed when the official portfolio finalises it, when its status is terminal, when it is a re-post of a revealed call, or when its opening is more than 90 days old. The reveal publishes `records/<id>/<n>.json` for every record: the exact bytes that were hashed, salt included. A reveal is never undone, and a record built afterwards is published in full together with its log line.
+A call is revealed when the official portfolio finalises it, when its status is terminal, when it is a re-post of a revealed call, when the team marked it as not a call, or when its opening is more than 90 days old. The reveal publishes `records/<id>/<n>.json` for every record: the exact bytes that were hashed, salt included. A reveal is never undone, and a record built afterwards is published in full together with its log line.
 
 A message record has no reveal condition. It holds no levels and no text, so it lands in `records/<message id>/<n>.json` in the same commit as its log line, salt included, and a member who can see the message can check it while the call is still open. Its line is a different shape, carrying `message_ref`, `channel_id` and `message_id` where a call's carries `signal_id`, `instrument` and `side`, and `schema` is what tells the two apart.
 
